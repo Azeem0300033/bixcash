@@ -1,444 +1,2941 @@
-
-	@if($ps->best == 1)
-		<!-- Phone and Accessories Area Start -->
-		<section class="phone-and-accessories categori-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 remove-padding">
-						<div class="section-top">
-							<h2 class="section-title">
-								{{ $langg->lang27 }}
-							</h2>
-						</div>
-					</div>
+<section class="featured-product pt0 pb90">
+	<div class=container>
+		<div class=row>
+			<div class=col-lg-6>
+				<div class="main-title mb0-sm">
+					<h2>{{ $langg->lang27 }}</h2>
 				</div>
-				<div class="row">
-					<div class="col-lg-9">
-						<div class="row">
-							@foreach($best_products as $prod)
-								@include('includes.product.home-product')
-							@endforeach
-						</div>
-					</div>
-					<div class="col-lg-3 remove-padding d-none d-lg-block">
-						<div class="aside">
-							<a class="banner-effect mb-10" href="{{ $ps->best_seller_banner_link }}">
-								<img src="{{asset('assets/images/'.$ps->best_seller_banner)}}" alt="">
-							</a>
-							<a class="banner-effect" href="{{ $ps->best_seller_banner_link1 }}">
-								<img src="{{asset('assets/images/'.$ps->best_seller_banner1)}}" alt="">
-							</a>
-						</div>
+			</div>
+			<div class=col-lg-6>
+				<div class="popular_listing_sliders ui_kit_tab style2">
+					<div class="nav nav-tabs mb30 justify-content-start justify-content-lg-end" role=tablist>
+						<button class="nav-link active" id=nav-home-tab data-bs-toggle=tab
+								data-bs-target=#nav-home role=tab aria-controls=nav-home aria-selected=true>Top {{ count($best_products) }}
+						</button>
+						<button class=nav-link id=nav-shopping-tab data-bs-toggle=tab
+								data-bs-target=#nav-shopping role=tab aria-controls=nav-shopping
+								aria-selected=false>Baby
+						</button>
+						<button class=nav-link id=nav-hotels-tab data-bs-toggle=tab data-bs-target=#nav-hotels
+								role=tab aria-controls=nav-hotels aria-selected=false>Furniture
+						</button>
+						<button class=nav-link id=nav-destination-tab data-bs-toggle=tab
+								data-bs-target=#nav-destination role=tab aria-controls=nav-destination
+								aria-selected=false>Electronic
+						</button>
+						<button class="nav-link me-0" id=nav-bread-tab data-bs-toggle=tab
+								data-bs-target=#nav-bread role=tab aria-controls=nav-bread aria-selected=false>
+							All
+						</button>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- Phone and Accessories Area start-->
-	@endif
-
-	@if($ps->flash_deal == 1)
-		<!-- Electronics Area Start -->
-		<section class="categori-item electronics-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 remove-padding">
-						<div class="section-top">
-							<h2 class="section-title">
-								{{ $langg->lang244 }}
-							</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="flash-deals">
-							<div class="flas-deal-slider">
-
-								@foreach($discount_products as $prod)
-									@include('includes.product.flash-product')
+		</div>
+		<div class=row>
+			<div class=col-lg-12>
+				<div class="popular_listing_sliders row ui_kit_tab style2">
+					<div class="tab-content col-lg-12" id=nav-tabContent>
+						<div class="tab-pane fade show active" id=nav-home role=tabpanel
+							 aria-labelledby=nav-home-tab>
+							<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none owl-theme owl-carousel">
+								@foreach($best_products as $product)
+									<div class="item ovh">
+										<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+											 data-wow-duration=1.1s>
+											<div class="thumb pb30">
+												<img src="{{ $product->photo ? asset('assets/images/thumbnails/'.$product->thumbnail):asset('assets/images/noimage.png') }}" alt="Best Seller Item">
+												<div class=thumb_info>
+													<ul class=mb0>
+														<li><a href=page-dashboard-wish-list.html><span
+																		class=flaticon-heart></span></a></li>
+														<li><a href=page-dashboard-wish-list.html><span
+																		class=flaticon-show></span></a></li>
+														<li><a href=page-shop-list-v6.html><span
+																		class=flaticon-graph></span></a></li>
+													</ul>
+												</div>
+												<div class="shop_item_cart_btn d-grid">
+													<a href=page-shop-cart.html class="btn btn-thm">Add to Cart</a>
+												</div>
+											</div>
+											<div class=details>
+												<div class=sub_title>SAMSUNG</div>
+												<div class=title><a href=page-shop-single-v1.html>Great Value Ultra
+														Strong Paper Towels, Split Sheets, 6 Double </a></div>
+												<div class="review d-flex db-500">
+													<ul class="mb0 me-2">
+														<li class=list-inline-item><a href=#><i
+																		class="fas fa-star"></i></a></li>
+														<li class=list-inline-item><a href=#><i
+																		class="fas fa-star"></i></a></li>
+														<li class=list-inline-item><a href=#><i
+																		class="fas fa-star"></i></a></li>
+														<li class=list-inline-item><a href=#><i
+																		class="fas fa-star"></i></a></li>
+														<li class=list-inline-item><a href=#><i
+																		class="fas fa-star"></i></a></li>
+													</ul>
+													<div class=review_count><a href=#>3,014 reviews</a></div>
+												</div>
+												<div class=si_footer>
+													<div class=price>$32.50 <small>
+															<del>$45</del>
+														</small></div>
+												</div>
+											</div>
+										</div>
+									</div>
 								@endforeach
+
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- Electronics Area start-->
-	@endif
-
-	@if($ps->large_banner == 1)
-		<!-- Banner Area One Start -->
-		<section class="banner-section">
-			<div class="container">
-				@foreach($large_banners->chunk(1) as $chunk)
-					<div class="row">
-						@foreach($chunk as $img)
-							<div class="col-lg-12 remove-padding">
-								<div class="img">
-									<a class="banner-effect" href="{{ $img->link }}">
-										<img src="{{asset('assets/images/banners/'.$img->photo)}}" alt="">
-									</a>
-								</div>
-							</div>
-						@endforeach
-					</div>
-				@endforeach
-			</div>
-		</section>
-		<!-- Banner Area One Start -->
-	@endif
-
-	@if($ps->top_rated == 1)
-		<!-- Electronics Area Start -->
-		<section class="categori-item electronics-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 remove-padding">
-						<div class="section-top">
-							<h2 class="section-title">
-								{{ $langg->lang28 }}
-							</h2>
-						</div>
-					</div>
+		</div>
+	</div>
+</section>
+<section class="deliver-divider pt0 pb90">
+	<div class=container>
+		<div class=row>
+			<div class=col-lg-12>
+				<div class="online_delivery text-center">
+					<h5 class=title>Members get free shipping* with no order minimum!*Restrictions apply.Try
+						free 30-day trial</h5>
 				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="row">
-
-							@foreach($top_products as $prod)
-								@include('includes.product.top-product')
-							@endforeach
-
-						</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="featured-product pt0">
+	<div class=container>
+		<div class=row>
+			<div class=col-md-5>
+				<div class="main-title mb0-sm">
+					<h2>Furniture products</h2>
+				</div>
+			</div>
+			<div class=col-md-7>
+				<div class="popular_listing_sliders ui_kit_tab style2">
+					<div class="nav nav-tabs mb30 justify-content-start justify-content-md-end" role=tablist>
+						<button class="nav-link active" id=nav-narive-tab data-bs-toggle=tab
+								data-bs-target=#nav-narive role=tab aria-controls=nav-narive aria-selected=true>
+							New arrivals
+						</button>
+						<button class=nav-link id=nav-bseller-tab data-bs-toggle=tab data-bs-target=#nav-bseller
+								role=tab aria-controls=nav-bseller aria-selected=false>Best sellers
+						</button>
+						<button class=nav-link id=nav-brated-tab data-bs-toggle=tab data-bs-target=#nav-brated
+								role=tab aria-controls=nav-brated aria-selected=false>Best rated
+						</button>
+						<button class="nav-link me-0" id=nav-afurniture-tab data-bs-toggle=tab
+								data-bs-target=#nav-afurniture role=tab aria-controls=nav-afurniture
+								aria-selected=false>All
+						</button>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- Electronics Area start-->
-	@endif
-
-	@if($ps->bottom_small == 1)
-		<!-- Banner Area One Start -->
-		<section class="banner-section">
-			<div class="container">
-				@foreach($bottom_small_banners->chunk(3) as $chunk)
-					<div class="row">
-						@foreach($chunk as $img)
-							<div class="col-lg-4 remove-padding">
-								<div class="left">
-									<a class="banner-effect" href="{{ $img->link }}" target="_blank">
-										<img src="{{asset('assets/images/banners/'.$img->photo)}}" alt="">
-									</a>
-								</div>
-							</div>
-						@endforeach
-					</div>
-				@endforeach
-			</div>
-		</section>
-		<!-- Banner Area One Start -->
-	@endif
-
-	@if($ps->big == 1)
-		<!-- Clothing and Apparel Area Start -->
-		<section class="categori-item clothing-and-Apparel-Area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 remove-padding">
-						<div class="section-top">
-							<h2 class="section-title">
-								{{ $langg->lang29 }}
-							</h2>
-
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-9">
-						<div class="row">
-							@foreach($big_products as $prod)
-								@include('includes.product.home-product')
-							@endforeach
-
-
-
-						</div>
-					</div>
-					<div class="col-lg-3 remove-padding d-none d-lg-block">
-						<div class="aside">
-							<a class="banner-effect mb-10" href="{{ $ps->big_save_banner_link }}">
-								<img src="{{asset('assets/images/'.$ps->big_save_banner)}}" alt="">
-							</a>
-							<a class="banner-effect" href="{{ $ps->big_save_banner_link1 }}">
-								<img src="{{asset('assets/images/'.$ps->big_save_banner1)}}" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</section>
-		<!-- Clothing and Apparel Area start-->
-	@endif
-
-	@if($ps->hot_sale == 1)
-		<!-- hot-and-new-item Area Start -->
-		<section class="hot-and-new-item">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="accessories-slider">
-							<div class="slide-item">
-								<div class="row">
-									<div class="col-lg-3 col-sm-6">
-										<div class="categori">
-											<div class="section-top">
-												<h2 class="section-title">
-													{{ $langg->lang30 }}
-												</h2>
+		</div>
+		<div class=row>
+			<div class=col-lg-12>
+				<div class="popular_listing_sliders row ui_kit_tab style2">
+					<div class="tab-content col-lg-12" id=nav-tabContent2>
+						<div class="tab-pane fade show active" id=nav-narive role=tabpanel
+							 aria-labelledby=nav-narive-tab>
+							<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none owl-theme owl-carousel">
+								<div class="item ovh">
+									<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+										 data-wow-duration=1.1s>
+										<div class="thumb pb30"><img src=images/shop-items/fp1.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
 											</div>
-											<div class="hot-and-new-item-slider">
-												@foreach($hot_products->chunk(3) as $chunk)
-													<div class="item-slide">
-														<ul class="item-list">
-															@foreach($chunk as $prod)
-																@include('includes.product.list-product')
-															@endforeach
-														</ul>
-													</div>
-												@endforeach
-											</div>
-
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
 										</div>
-									</div>
-									<div class="col-lg-3 col-sm-6">
-										<div class="categori">
-											<div class="section-top">
-												<h2 class="section-title">
-													{{ $langg->lang31 }}
-												</h2>
+										<div class=details>
+											<div class=sub_title>SAMSUNG</div>
+											<div class=title><a href=page-shop-single-v1.html>Samsung 65" 4K UHD
+													HDR QLED Tizen Smart TV</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
 											</div>
-
-											<div class="hot-and-new-item-slider">
-
-												@foreach($latest_products->chunk(3) as $chunk)
-													<div class="item-slide">
-														<ul class="item-list">
-															@foreach($chunk as $prod)
-																@include('includes.product.list-product')
-															@endforeach
-														</ul>
-													</div>
-												@endforeach
-
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-3 col-sm-6">
-										<div class="categori">
-											<div class="section-top">
-												<h2 class="section-title">
-													{{ $langg->lang32 }}
-												</h2>
-											</div>
-
-
-											<div class="hot-and-new-item-slider">
-
-												@foreach($trending_products->chunk(3) as $chunk)
-													<div class="item-slide">
-														<ul class="item-list">
-															@foreach($chunk as $prod)
-																@include('includes.product.list-product')
-															@endforeach
-														</ul>
-													</div>
-												@endforeach
-
-											</div>
-
-										</div>
-									</div>
-									<div class="col-lg-3 col-sm-6">
-										<div class="categori">
-											<div class="section-top">
-												<h2 class="section-title">
-													{{ $langg->lang33 }}
-												</h2>
-											</div>
-
-											<div class="hot-and-new-item-slider">
-
-												@foreach($sale_products->chunk(3) as $chunk)
-													<div class="item-slide">
-														<ul class="item-list">
-															@foreach($chunk as $prod)
-																@include('includes.product.list-product')
-															@endforeach
-														</ul>
-													</div>
-												@endforeach
-
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
 											</div>
 										</div>
 									</div>
 								</div>
+								<div class="item ovh">
+									<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+										 data-wow-duration=1.3s>
+										<div class="thumb pb30"><img src=images/shop-items/fp2.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SONY</div>
+											<div class=title><a href=page-shop-single-v1.html>Ozark Trail
+													6-Person Clip & Camp Dome Tent</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item ovh">
+									<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+										 data-wow-duration=1.5s>
+										<div class="thumb pb30"><img src=images/shop-items/fp3.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>Eastsport</div>
+											<div class=title><a href=page-shop-single-v1.html>Beats by Dr. Dre
+													Studio3 Skyline Over-Ear Noise Cancelling</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$399.00<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item ovh">
+									<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+										 data-wow-duration=1.7s>
+										<div class="thumb pb30"><img src=images/shop-items/fp4.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Eastsport Unisex
+													Campus Tech Backpack Charcoal</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item ovh">
+									<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+										 data-wow-duration=1.9s>
+										<div class="thumb pb30"><img src=images/shop-items/fp5.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Pre-Owned Rolex
+													Day-date 1802 Gold Watch (Certified Authenti...</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$18.124<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id=nav-bseller role=tabpanel aria-labelledby=nav-bseller-tab>
+							<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none owl-theme owl-carousel">
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp1.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SAMSUNG</div>
+											<div class=title><a href=page-shop-single-v1.html>Samsung 65" 4K UHD
+													HDR QLED Tizen Smart TV</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp2.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SONY</div>
+											<div class=title><a href=page-shop-single-v1.html>Ozark Trail
+													6-Person Clip & Camp Dome Tent</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp3.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>Eastsport</div>
+											<div class=title><a href=page-shop-single-v1.html>Beats by Dr. Dre
+													Studio3 Skyline Over-Ear Noise Cancelling</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$399.00<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp4.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Eastsport Unisex
+													Campus Tech Backpack Charcoal</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp5.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Pre-Owned Rolex
+													Day-date 1802 Gold Watch (Certified Authenti...</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$18.124<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id=nav-brated role=tabpanel aria-labelledby=nav-brated-tab>
+							<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none owl-theme owl-carousel">
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp1.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SAMSUNG</div>
+											<div class=title><a href=page-shop-single-v1.html>Samsung 65" 4K UHD
+													HDR QLED Tizen Smart TV</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp2.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SONY</div>
+											<div class=title><a href=page-shop-single-v1.html>Ozark Trail
+													6-Person Clip & Camp Dome Tent</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp3.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>Eastsport</div>
+											<div class=title><a href=page-shop-single-v1.html>Beats by Dr. Dre
+													Studio3 Skyline Over-Ear Noise Cancelling</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$399.00<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp4.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Eastsport Unisex
+													Campus Tech Backpack Charcoal</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp5.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Pre-Owned Rolex
+													Day-date 1802 Gold Watch (Certified Authenti...</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$18.124<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id=nav-afurniture role=tabpanel
+							 aria-labelledby=nav-afurniture-tab>
+							<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none owl-theme owl-carousel">
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp1.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SAMSUNG</div>
+											<div class=title><a href=page-shop-single-v1.html>Samsung 65" 4K UHD
+													HDR QLED Tizen Smart TV</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp2.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>SONY</div>
+											<div class=title><a href=page-shop-single-v1.html>Ozark Trail
+													6-Person Clip & Camp Dome Tent</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp3.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>Eastsport</div>
+											<div class=title><a href=page-shop-single-v1.html>Beats by Dr. Dre
+													Studio3 Skyline Over-Ear Noise Cancelling</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$399.00<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp4.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Eastsport Unisex
+													Campus Tech Backpack Charcoal</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$32.50<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class=item>
+									<div class="shop_item bdrtrb1 px-2 px-sm-3">
+										<div class="thumb pb30"><img src=images/shop-items/fp5.png
+																	 alt="Furniture Product">
+											<div class=thumb_info>
+												<ul class=mb0>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-heart></span></a></li>
+													<li><a href=page-dashboard-wish-list.html><span
+																	class=flaticon-show></span></a></li>
+													<li><a href=page-shop-list-v6.html><span
+																	class=flaticon-graph></span></a></li>
+												</ul>
+											</div>
+											<div class="shop_item_cart_btn d-grid"><a href=page-shop-cart.html
+																					  class="btn btn-thm">Add to
+													Cart</a></div>
+										</div>
+										<div class=details>
+											<div class=sub_title>rolex</div>
+											<div class=title><a href=page-shop-single-v1.html>Pre-Owned Rolex
+													Day-date 1802 Gold Watch (Certified Authenti...</a></div>
+											<div class="review d-flex db-500">
+												<ul class="mb0 me-2">
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+													<li class=list-inline-item><a href=#><i
+																	class="fas fa-star"></i></a></li>
+												</ul>
+												<div class=review_count><a href=#>3,014 reviews</a></div>
+											</div>
+											<div class=si_footer>
+												<div class=price>$18.124<small>
+														<del>$45</del>
+													</small></div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- Clothing and Apparel Area start-->
-	@endif
-
-	@if($ps->review_blog == 1)
-		<!-- Blog Area Start -->
-		<section class="blog-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="aside">
-							<div class="slider-wrapper">
-								<div class="aside-review-slider">
-									@foreach($reviews as $review)
-										<div class="slide-item">
-											<div class="top-area">
-												<div class="left">
-													<img src="{{ $review->photo ? asset('assets/images/reviews/'.$review->photo) : asset('assets/images/noimage.png') }}" alt="">
+		</div>
+	</div>
+</section>
+<section class="featured-product pt0">
+	<div class=container>
+		<div class=row>
+			<div class=col-md-5>
+				<div class="main-title mb0-sm">
+					<h2>Electronics products</h2>
+				</div>
+			</div>
+			<div class=col-md-7>
+				<div class="popular_listing_sliders ui_kit_tab style2">
+					<div class="nav nav-tabs mb30 justify-content-start justify-content-md-end" role=tablist>
+						<button class="nav-link active" id=nav-enarive-tab data-bs-toggle=tab
+								data-bs-target=#nav-enarive role=tab aria-controls=nav-enarive
+								aria-selected=true>New arrivals
+						</button>
+						<button class=nav-link id=nav-ebseller-tab data-bs-toggle=tab
+								data-bs-target=#nav-ebseller role=tab aria-controls=nav-ebseller
+								aria-selected=false>Best sellers
+						</button>
+						<button class=nav-link id=nav-ebrated-tab data-bs-toggle=tab data-bs-target=#nav-ebrated
+								role=tab aria-controls=nav-ebrated aria-selected=false>Best rated
+						</button>
+						<button class="nav-link me-0" id=nav-aelectronic-tab data-bs-toggle=tab
+								data-bs-target=#nav-aelectronic role=tab aria-controls=nav-aelectronic
+								aria-selected=false>All
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class=row>
+			<div class=col-lg-12>
+				<div class="popular_listing_sliders row ui_kit_tab style2">
+					<div class="tab-content col-lg-12" id=nav-tabContent3>
+						<div class="tab-pane fade show active" id=nav-enarive role=tabpanel
+							 aria-labelledby=nav-enarive-tab>
+							<div class=row>
+								<div class=col-lg-12>
+									<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none nav_none owl-theme owl-carousel">
+										<div class="item ovh">
+											<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+												 data-wow-duration=1.1s>
+												<div class="thumb pb30"><img src=images/shop-items/ep1.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
 												</div>
-												<div class="right">
-													<div class="content">
-														<h4 class="name">{{ $review->title }}</h4>
-														<p class="dagenation">{{ $review->subtitle }}</p>
-													</div>
-												</div>
-											</div>
-											<blockquote class="review-text">
-												<p>
-													{!! $review->details !!}
-												</p>
-											</blockquote>
-										</div>
-									@endforeach
-
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						@foreach(DB::table('blogs')->orderby('views','desc')->take(2)->get() as $blogg)
-
-							<div class="blog-box">
-								<div class="blog-images">
-									<div class="img">
-										<img src="{{ $blogg->photo ? asset('assets/images/blogs/'.$blogg->photo):asset('assets/images/noimage.png') }}" class="img-fluid" alt="">
-										<div class="date d-flex justify-content-center">
-											<div class="box align-self-center">
-												<p>{{date('d', strtotime($blogg->created_at))}}</p>
-												<p>{{date('M', strtotime($blogg->created_at))}}</p>
-											</div>
-										</div>
-									</div>
-
-								</div>
-								<div class="details">
-									<a href='{{route('front.blogshow',$blogg->id)}}'>
-										<h4 class="blog-title">
-											{{strlen($blogg->title) > 40 ? substr($blogg->title,0,40)."...":$blogg->title}}
-										</h4>
-									</a>
-									<p class="blog-text">
-										{{substr(strip_tags($blogg->details),0,170)}}
-									</p>
-									<a class="read-more-btn" href="{{route('front.blogshow',$blogg->id)}}">{{ $langg->lang34 }}</a>
-								</div>
-							</div>
-
-						@endforeach
-
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Blog Area start-->
-	@endif
-
-	@if($ps->partners == 1)
-		<!-- Partners Area Start -->
-		<section class="partners">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section-top">
-							<h2 class="section-title">
-								{{ $langg->lang236 }}
-							</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="partner-slider">
-							@foreach($partners as $data)
-								<div class="item-slide">
-									<a href="{{ $data->link }}" target="_blank">
-										<img src="{{asset('assets/images/partner/'.$data->photo)}}" alt="">
-									</a>
-								</div>
-							@endforeach
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Partners Area Start -->
-	@endif
-
-	@if($ps->service == 1)
-
-	{{-- Info Area Start --}}
-	<section class="info-area">
-			<div class="container">
-
-					@foreach($services->chunk(4) as $chunk)
-	
-						<div class="row">
-	
-							<div class="col-lg-12 p-0">
-								<div class="info-big-box">
-									<div class="row">
-										@foreach($chunk as $service)
-											<div class="col-6 col-xl-3 p-0">
-												<div class="info-box">
-													<div class="icon">
-														<img src="{{ asset('assets/images/services/'.$service->photo) }}">
-													</div>
-													<div class="info">
-														<div class="details">
-															<h4 class="title">{{ $service->title }}</h4>
-															<p class="text">
-																{!! $service->details !!}
-															</p>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															Watch SE (GPS) 40mm Space Grey Aluminum Case
+															with</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
 														</div>
 													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
 												</div>
 											</div>
-										@endforeach
+										</div>
+										<div class="item ovh">
+											<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+												 data-wow-duration=1.3s>
+												<div class="thumb pb30"><img src=images/shop-items/ep2.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															iPhone 11 64GB Smartphone - Black.</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item ovh">
+											<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+												 data-wow-duration=1.5s>
+												<div class="thumb pb30"><img src=images/shop-items/ep3.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Eastsport</div>
+													<div class=title><a href=page-shop-single-v1.html>iRobot
+															Roomba i3+ EVO Wi-Fi Connected Self-Empty Robot.</a>
+													</div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$399.00<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item ovh">
+											<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+												 data-wow-duration=1.7s>
+												<div class="thumb pb30"><img src=images/shop-items/ep4.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Dyson V7
+															Complete Cordless Stick Vacuum - Iron/Blue</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item ovh">
+											<div class="shop_item bdrtrb1 px-2 px-sm-3 wow fadeIn"
+												 data-wow-duration=1.9s>
+												<div class="thumb pb30"><img src=images/shop-items/ep5.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Meta Quest
+															2 256GB VR Headset with Touch Controllers</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$18.124<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-	
 						</div>
-	
-					@endforeach
-	
+						<div class="tab-pane fade" id=nav-ebseller role=tabpanel
+							 aria-labelledby=nav-ebseller-tab>
+							<div class=row>
+								<div class=col-lg-12>
+									<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none nav_none owl-theme owl-carousel">
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep1.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															Watch SE (GPS) 40mm Space Grey Aluminum Case
+															with</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep2.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															iPhone 11 64GB Smartphone - Black.</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep3.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Eastsport</div>
+													<div class=title><a href=page-shop-single-v1.html>iRobot
+															Roomba i3+ EVO Wi-Fi Connected Self-Empty Robot.</a>
+													</div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$399.00<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep4.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Dyson V7
+															Complete Cordless Stick Vacuum - Iron/Blue</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep5.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Meta Quest
+															2 256GB VR Headset with Touch Controllers</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$18.124<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id=nav-ebrated role=tabpanel aria-labelledby=nav-ebrated-tab>
+							<div class=row>
+								<div class=col-lg-12>
+									<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none nav_none owl-theme owl-carousel">
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep1.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															Watch SE (GPS) 40mm Space Grey Aluminum Case
+															with</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep2.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															iPhone 11 64GB Smartphone - Black.</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep3.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Eastsport</div>
+													<div class=title><a href=page-shop-single-v1.html>iRobot
+															Roomba i3+ EVO Wi-Fi Connected Self-Empty Robot.</a>
+													</div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$399.00<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep4.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Dyson V7
+															Complete Cordless Stick Vacuum - Iron/Blue</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep5.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Meta Quest
+															2 256GB VR Headset with Touch Controllers</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$18.124<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id=nav-aelectronic role=tabpanel
+							 aria-labelledby=nav-aelectronic-tab>
+							<div class=row>
+								<div class=col-lg-12>
+									<div class="best_item_slider_shop_lising_page shop_item_5grid_slider slider_dib_sm nav_none_400 dots_none nav_none owl-theme owl-carousel">
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep1.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															Watch SE (GPS) 40mm Space Grey Aluminum Case
+															with</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep2.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Apple</div>
+													<div class=title><a href=page-shop-single-v1.html>Apple
+															iPhone 11 64GB Smartphone - Black.</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep3.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>Eastsport</div>
+													<div class=title><a href=page-shop-single-v1.html>iRobot
+															Roomba i3+ EVO Wi-Fi Connected Self-Empty Robot.</a>
+													</div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$399.00<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep4.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Dyson V7
+															Complete Cordless Stick Vacuum - Iron/Blue</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$32.50<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=item>
+											<div class="shop_item bdrtrb1 px-2 px-sm-3">
+												<div class="thumb pb30"><img src=images/shop-items/ep5.png
+																			 alt="Electronics Product">
+													<div class=thumb_info>
+														<ul class=mb0>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-heart></span></a>
+															</li>
+															<li><a href=page-dashboard-wish-list.html><span
+																			class=flaticon-show></span></a></li>
+															<li><a href=page-shop-list-v6.html><span
+																			class=flaticon-graph></span></a>
+															</li>
+														</ul>
+													</div>
+													<div class="shop_item_cart_btn d-grid"><a
+																href=page-shop-cart.html class="btn btn-thm">Add
+															to Cart</a></div>
+												</div>
+												<div class=details>
+													<div class=sub_title>rolex</div>
+													<div class=title><a href=page-shop-single-v1.html>Meta Quest
+															2 256GB VR Headset with Touch Controllers</a></div>
+													<div class="review d-flex db-500">
+														<ul class="mb0 me-2">
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+															<li class=list-inline-item><a href=#><i
+																			class="fas fa-star"></i></a></li>
+														</ul>
+														<div class=review_count><a href=#>3,014 reviews</a>
+														</div>
+													</div>
+													<div class=si_footer>
+														<div class=price>$18.124<small>
+																<del>$45</del>
+															</small></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</section>
-		{{-- Info Area End  --}}
-
-		@endif		
-
-	<!-- main -->
-	<script src="{{asset('assets/front/js/mainextra.js')}}"></script>
+		</div>
+		<div class="row mt100">
+			<div class=col-lg-12>
+				<div class="shop_item_7grid_slider slider_dib_400 dots_none nav_none shop_by_brand style2 owl-carousel owl-theme">
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=1.1s href=#>Wireless
+							Networks</a></div>
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=1.3s href=#>Cell
+							Phones</a></div>
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=1.5s href=#>Cameras</a>
+					</div>
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=1.7s href=#>Head
+							Phones</a></div>
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=1.9s
+									   href=#>Accessories</a></div>
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=2.1s href=#>Gaming
+							Monitors</a></div>
+					<div class=item><a class="mb-2 me-3 wow fadeInUp" data-wow-duration=2.3s href=#>Virtual
+							Reality</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="banner_one_large bdrs6 mt100 px-4 px-md-0">
+			<div class=row>
+				<div class="col-lg-5 offset-lg-1 align-self-center">
+					<div class="apple_widget_home1 mb-4 mb-lg-0">
+						<h1 class=title>Apple Watch</h1>
+						<p class="para mt-3 mb-4">Now up to $70 off. Give Mom a gift that shows off your
+							love.</p>
+						<a href=page-shop-list-v1.html class="btn btn-thm">Shop Now</a></div>
+				</div>
+				<div class="col-lg-6 align-self-center">
+					<div class="apple_widget_home1 animate_content text-center">
+						<div class="thumb animate_thumb"><img src=images/banner/banner-img1.png
+															  alt="Banner Image"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="featured-product pt0">
+	<div class=container>
+		<div class=row>
+			<div class=col-md-6>
+				<div class="main-title mb0-sm">
+					<h2>Hot New Arrivals</h2>
+				</div>
+			</div>
+			<div class=col-md-6>
+				<div class="popular_listing_sliders style2 ui_kit_tab">
+					<div class="justify-content-md-end justify-content-start mb30 nav nav-tabs" role=tablist>
+						<button aria-controls=nav-hnat20 aria-selected=true class="nav-link active"
+								data-bs-target=#nav-hnat20 data-bs-toggle=tab id=nav-hnat20-tab role=tab>Top 20
+						</button>
+						<button aria-controls=nav-hnababy aria-selected=false class=nav-link
+								data-bs-target=#nav-hnababy data-bs-toggle=tab id=nav-hnababy-tab role=tab>Baby
+						</button>
+						<button aria-controls=nav-hnafurniture aria-selected=false class=nav-link
+								data-bs-target=#nav-hnafurniture data-bs-toggle=tab id=nav-hnafurniture-tab
+								role=tab>Furniture
+						</button>
+						<button aria-controls=nav-hnaent aria-selected=false class="nav-link me-0"
+								data-bs-target=#nav-hnaent data-bs-toggle=tab id=nav-hnaent-tab role=tab>
+							Electronic
+						</button>
+						<button aria-controls=nav-hnaall aria-selected=false class="nav-link me-0"
+								data-bs-target=#nav-hnaall data-bs-toggle=tab id=nav-hnaall-tab role=tab>All
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class=row>
+			<div class=col-lg-12>
+				<div class="row popular_listing_sliders style2 ui_kit_tab">
+					<div class="col-lg-12 tab-content" id=nav-tabContent4>
+						<div class="fade tab-pane active show" id=nav-hnat20 aria-labelledby=nav-hnat20-tab
+							 role=tabpanel>
+							<div class=row>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap1.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
+													Black, Standard</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap2.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
+													f/2.8 GM II G Master</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap3.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap4.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap5.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap6.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
+													Case with S-Pen Bundle</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap7.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap8.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
+													Chair Mesh Computer</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap9.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
+													Bridge Round Sunglasses</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap10.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
+													Desk Mount Stand</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap11.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
+													and Repositionable</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap12.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
+													Soothing Aloe</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fade tab-pane" id=nav-hnababy aria-labelledby=nav-hnababy-tab role=tabpanel>
+							<div class=row>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap1.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
+													Black, Standard</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap2.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
+													f/2.8 GM II G Master</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap3.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap4.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap5.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap6.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
+													Case with S-Pen Bundle</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap7.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap8.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
+													Chair Mesh Computer</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap9.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
+													Bridge Round Sunglasses</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap10.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
+													Desk Mount Stand</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap11.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
+													and Repositionable</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap12.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
+													Soothing Aloe</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fade tab-pane" id=nav-hnafurniture aria-labelledby=nav-hnafurniture-tab
+							 role=tabpanel>
+							<div class=row>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap1.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
+													Black, Standard</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap2.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
+													f/2.8 GM II G Master</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap3.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap4.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap5.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap6.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
+													Case with S-Pen Bundle</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap7.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap8.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
+													Chair Mesh Computer</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap9.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
+													Bridge Round Sunglasses</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap10.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
+													Desk Mount Stand</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap11.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
+													and Repositionable</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap12.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
+													Soothing Aloe</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fade tab-pane" id=nav-hnaent aria-labelledby=nav-hnaent-tab role=tabpanel>
+							<div class=row>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap1.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
+													Black, Standard</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap2.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
+													f/2.8 GM II G Master</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap3.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap4.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap5.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap6.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
+													Case with S-Pen Bundle</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap7.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap8.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
+													Chair Mesh Computer</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap9.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
+													Bridge Round Sunglasses</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap10.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
+													Desk Mount Stand</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap11.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
+													and Repositionable</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap12.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
+													Soothing Aloe</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="fade tab-pane" id=nav-hnaall aria-labelledby=nav-hnaall-tab role=tabpanel>
+							<div class=row>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap1.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
+													Black, Standard</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap2.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
+													f/2.8 GM II G Master</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap3.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=0.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap4.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
+													TV</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap5.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap6.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
+													Case with S-Pen Bundle</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap7.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
+													64GB</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.7s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap8.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
+													Chair Mesh Computer</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=1.9s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap9.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
+													Bridge Round Sunglasses</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.1s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap10.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
+													Desk Mount Stand</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.3s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap11.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
+													and Repositionable</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+									 data-wow-duration=2.5s>
+									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
+																	  src=images/shop-items/hnap12.png></div>
+										<div class="flex-grow-1 ms-3">
+											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
+													Soothing Aloe</a></div>
+											<div class="para text-thm1">$32.50</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,1114 +1,717 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html dir=ltr lang=en>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=keywords
+          content="auto parts, baby store, ecommerce, electronics, fashion, food, marketplace, modern, multi vendor, multipurpose, organic, responsive, shop, shopping, store">
+    <meta name=description content="Zeomart - Multi-Vendor & Marketplace HTML Template">
+    <meta name=CreativeLayers content=ATFN>
     @if(isset($page->meta_tag) && isset($page->meta_description))
         <meta name="keywords" content="{{ $page->meta_tag }}">
         <meta name="description" content="{{ $page->meta_description }}">
-		<title>{{$gs->title}}</title>
+        <title>{{$gs->title}}</title>
     @elseif(isset($blog->meta_tag) && isset($blog->meta_description))
         <meta name="keywords" content="{{ $blog->meta_tag }}">
         <meta name="description" content="{{ $blog->meta_description }}">
-		<title>{{$gs->title}}</title>
+        <title>{{$gs->title}}</title>
     @elseif(isset($productt))
-		<meta name="keywords" content="{{ !empty($productt->meta_tag) ? implode(',', $productt->meta_tag ): '' }}">
-		<meta name="description" content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}">
-	    <meta property="og:title" content="{{$productt->name}}" />
-	    <meta property="og:description" content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-	    <meta property="og:image" content="{{asset('assets/images/'.$productt->photo)}}" />
-	    <meta name="author" content="GeniusOcean">
-    	<title>{{substr($productt->name, 0,11)."-"}}{{$gs->title}}</title>
+        <meta name="keywords" content="{{ !empty($productt->meta_tag) ? implode(',', $productt->meta_tag ): '' }}">
+        <meta name="description"
+              content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}">
+        <meta property="og:title" content="{{$productt->name}}"/>
+        <meta property="og:description"
+              content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}"/>
+        <meta property="og:image" content="{{asset('assets/images/'.$productt->photo)}}"/>
+        <meta name="author" content="GeniusOcean">
+        <title>{{substr($productt->name, 0,11)."-"}}{{$gs->title}}</title>
     @else
-	    <meta name="keywords" content="{{ $seo->meta_keys }}">
-	    <meta name="author" content="GeniusOcean">
-		<title>{{$gs->title}}</title>
+        <meta name="keywords" content="{{ $seo->meta_keys }}">
+        <meta name="author" content="GeniusOcean">
+        <title>{{$gs->title}}</title>
     @endif
-	<!-- favicon -->
-	<link rel="icon"  type="image/x-icon" href="{{asset('assets/images/'.$gs->favicon)}}"/>
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="{{asset('assets/front/css/bootstrap.min.css')}}">
-	<!-- Plugin css -->
-	<link rel="stylesheet" href="{{asset('assets/front/css/plugin.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/animate.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/toastr.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/toastr.css')}}">
-
-	<!-- jQuery Ui Css-->
-	<link rel="stylesheet" href="{{asset('assets/front/jquery-ui/jquery-ui.min.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/jquery-ui/jquery-ui.structure.min.css')}}">
-
-@if($langg->rtl == "1")
-
-	<!-- stylesheet -->
-	<link rel="stylesheet" href="{{asset('assets/front/css/rtl/style.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/rtl/custom.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/common.css')}}">
-	<!-- responsive -->
-	<link rel="stylesheet" href="{{asset('assets/front/css/rtl/responsive.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/common-responsive.css')}}">
-
-    <!--Updated CSS-->
- <link rel="stylesheet" href="{{ asset('assets/front/css/rtl/styles.php?color='.str_replace('#','',$gs->colors).'&amp;'.'header_color='.str_replace('#','',$gs->header_color).'&amp;'.'footer_color='.str_replace('#','',$gs->footer_color).'&amp;'.'copyright_color='.str_replace('#','',$gs->copyright_color).'&amp;'.'menu_color='.str_replace('#','',$gs->menu_color).'&amp;'.'menu_hover_color='.str_replace('#','',$gs->menu_hover_color)) }}">
-
-@else
-
-	<!-- stylesheet -->
-	<link rel="stylesheet" href="{{asset('assets/front/css/style.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/custom.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/common.css')}}">
-	<!-- responsive -->
-	<link rel="stylesheet" href="{{asset('assets/front/css/responsive.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/front/css/common-responsive.css')}}">
-
-    <!--Updated CSS-->
- <link rel="stylesheet" href="{{ asset('assets/front/css/styles.php?color='.str_replace('#','',$gs->colors).'&amp;'.'header_color='.str_replace('#','',$gs->header_color).'&amp;'.'footer_color='.str_replace('#','',$gs->footer_color).'&amp;'.'copyright_color='.str_replace('#','',$gs->copyright_color).'&amp;'.'menu_color='.str_replace('#','',$gs->menu_color).'&amp;'.'menu_hover_color='.str_replace('#','',$gs->menu_hover_color)) }}">
-
-@endif
-
-
-
-	@yield('styles')
-
+    <link rel=stylesheet href={{ asset("css/bootstrap.min.css")}}>
+    <link rel=stylesheet href={{ asset("css/ace-responsive-menu.css")}}>
+    <link rel=stylesheet href={{ asset("css/menu.css")}}>
+    <link rel=stylesheet href={{ asset("css/fontawesome.css")}}>
+    <link rel=stylesheet href={{ asset("css/flaticon.css")}}>
+    <link rel=stylesheet href={{ asset("css/bootstrap-select.min.css")}}>
+    <link rel=stylesheet href={{ asset("css/animate.css")}}>
+    <link rel=stylesheet href={{ asset("css/slider.css")}}>
+    <link rel=stylesheet href={{ asset("css/style.css")}}>
+    <link rel=preconnect href=https://fonts.googleapis.com/>
+    <link rel=preconnect href=https://fonts.gstatic.com/ crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&amp;family=Poppins:wght@700&amp;display=swap"
+          rel=stylesheet>
+    <link rel=stylesheet href={{asset("css/responsive.css")}}>
+    <link href="{{asset('assets/images/'.$gs->favicon)}}" sizes=128x128 rel="shortcut icon" type=image/x-icon>
+    <link href="{{asset('assets/images/'.$gs->favicon)}}" sizes=128x128 rel="shortcut icon">
+    <link href="{{asset('assets/images/'.$gs->favicon)}}" sizes=60x60 rel=apple-touch-icon>
+    <link href="{{asset('assets/images/'.$gs->favicon)}}" sizes=72x72 rel=apple-touch-icon>
+    <link href="{{asset('assets/images/'.$gs->favicon)}}" sizes=114x114 rel=apple-touch-icon>
+    <link href="{{asset('assets/images/'.$gs->favicon)}}" sizes=180x180 rel=apple-touch-icon>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @yield('styles')
 </head>
-
 <body>
-
-@if($gs->is_loader == 1)
-	<div class="preloader" id="preloader" style="background: url({{asset('assets/images/'.$gs->loader)}}) no-repeat scroll center center #FFF;"></div>
-@endif
-
-@if($gs->is_popup== 1)
-
-@if(isset($visited))
-    <div style="display:none">
-        <img src="{{asset('assets/images/'.$gs->popup_background)}}">
-    </div>
-
-    <!--  Starting of subscribe-pre-loader Area   -->
-    <div class="subscribe-preloader-wrap" id="subscriptionForm" style="display: none;">
-        <div class="subscribePreloader__thumb" style="background-image: url({{asset('assets/images/'.$gs->popup_background)}});">
-            <span class="preload-close"><i class="fas fa-times"></i></span>
-            <div class="subscribePreloader__text text-center">
-                <h1>{{$gs->popup_title}}</h1>
-                <p>{{$gs->popup_text}}</p>
-                <form action="{{route('front.subscribe')}}" id="subscribeform" method="POST">
-                    {{csrf_field()}}
-                    <div class="form-group">
-                        <input type="email" name="email"  placeholder="{{ $langg->lang741 }}" required="">
-                        <button id="sub-btn" type="submit">{{ $langg->lang742 }}</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--  Ending of subscribe-pre-loader Area   -->
-
-@endif
-
-@endif
-
-
-	<section class="top-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 remove-padding">
-					<div class="content">
-						<div class="left-content">
-							<div class="list">
-								<ul>
-
-
-									@if($gs->is_language == 1)
-									<li>
-										<div class="language-selector">
-											<i class="fas fa-globe-americas"></i>
-											<select name="language" class="language selectors nice">
-										@foreach(DB::table('languages')->get() as $language)
-											<option value="{{route('front.language',$language->id)}}" {{ Session::has('language') ? ( Session::get('language') == $language->id ? 'selected' : '' ) : (DB::table('languages')->where('is_default','=',1)->first()->id == $language->id ? 'selected' : '') }} >{{$language->language}}</option>
-										@endforeach
-											</select>
-										</div>
-									</li>
-									@endif
-
-									@if($gs->is_currency == 1)
-									<li>
-										<div class="currency-selector">
-								<!--<span>{{ Session::has('currency') ?   DB::table('currencies')->where('id','=',Session::get('currency'))->first()->sign   : DB::table('currencies')->where('is_default','=',1)->first()->sign }}</span>-->
-										<select name="currency" class="currency selectors nice">
-										@foreach(DB::table('currencies')->get() as $currency)
-											<option value="{{route('front.currency',$currency->id)}}" {{ Session::has('currency') ? ( Session::get('currency') == $currency->id ? 'selected' : '' ) : (DB::table('currencies')->where('is_default','=',1)->first()->id == $currency->id ? 'selected' : '') }} >{{$currency->name}}</option>
-										@endforeach
-										</select>
-										</div>
-									</li>
-									@endif
-
-
-								</ul>
-							</div>
-						</div>
-						<div class="right-content">
-							<div class="list">
-								<ul>
-									@if(!Auth::guard('web')->check())
-									<li class="login">
-										<a href="{{ route('user.login') }}" class="sign-log">
-											<div class="links">
-												<span class="sign-in">{{ $langg->lang12 }}</span> <span>|</span>
-												<!--<span class="join">{{ $langg->lang13 }}</span>-->
-											</div>
-										</a>
-									</li>
-									@else
-										<li class="profilearea my-dropdown">
-											<a href="javascript: ;" id="profile-icon" class="profile carticon">
-												<span class="text">
-													<i class="far fa-user"></i>	{{ $langg->lang11 }} <i class="fas fa-chevron-down"></i>
-												</span>
-											</a>
-											<div class="my-dropdown-menu profile-dropdown">
-												<ul class="profile-links">
-													<li>
-														<a href="{{ route('user-dashboard') }}"><i class="fas fa-angle-double-right"></i> {{ $langg->lang221 }}</a>
-													</li>
-													@if(Auth::user()->IsVendor())
-													<li>
-														<a href="{{ route('vendor-dashboard') }}"><i class="fas fa-angle-double-right"></i> {{ $langg->lang222 }}</a>
-													</li>
-													@endif
-
-													<li>
-														<a href="{{ route('user-profile') }}"><i class="fas fa-angle-double-right"></i> {{ $langg->lang205 }}</a>
-													</li>
-
-													<li>
-														<a href="{{ route('user-logout') }}"><i class="fas fa-angle-double-right"></i> {{ $langg->lang223 }}</a>
-													</li>
-												</ul>
-											</div>
-										</li>
-									@endif
-
-
-                        			@if($gs->reg_vendor == 1)
-										<li>
-                        				@if(Auth::check())
-	                        				@if(Auth::guard('web')->user()->is_vendor == 2)
-	                        					<a href="{{ route('vendor-dashboard') }}" class="sell-btn">{{ $langg->lang220 }}</a>
-	                        				@else
-	                        					<a href="{{ route('user-package') }}" class="sell-btn">{{ $langg->lang220 }}</a>
-	                        				@endif
-										</li>
-                        				@else
-										<li>
-											<a href="javascript:;" data-toggle="modal" data-target="#vendor-login" class="sell-btn">{{ $langg->lang220 }}</a>
-										</li>
-										@endif
-									@endif
-
-
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Top Header Area End -->
-
-	<!-- Logo Header Area Start -->
-	<section class="logo-header">
-		<div class="container">
-			<div class="row ">
-				<div class="col-lg-2 col-sm-6 col-5 remove-padding">
-					<div class="logo">
-						<a href="{{ route('front.index') }}">
-							<img src="{{asset('assets/images/'.$gs->logo)}}" alt="">
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-8 col-sm-12 remove-padding order-last order-sm-2 order-md-2">
-					<div class="search-box-wrapper">
-						<div class="search-box">
-							<div class="categori-container" id="catSelectForm">
-								<select name="category" id="category_select" class="categoris">
-									<option value="">{{ $langg->lang1 }}</option>
-									@foreach($categories as $data)
-									<option value="{{ $data->slug }}" {{ Request::route('category') == $data->slug ? 'selected' : '' }}>{{ $data->name }}</option>
-									@endforeach
-								</select>
-							</div>
-
-							<form id="searchForm" class="search-form" action="{{ route('front.category', [Request::route('category'),Request::route('subcategory'),Request::route('childcategory')]) }}" method="GET">
-								@if (!empty(request()->input('sort')))
-									<input type="hidden" name="sort" value="{{ request()->input('sort') }}">
-								@endif
-								@if (!empty(request()->input('minprice')))
-									<input type="hidden" name="minprice" value="{{ request()->input('minprice') }}">
-								@endif
-								@if (!empty(request()->input('maxprice')))
-									<input type="hidden" name="maxprice" value="{{ request()->input('maxprice') }}">
-								@endif
-								<input type="text" id="prod_name" name="search" placeholder="{{ $langg->lang2 }}" value="{{ request()->input('search') }}" autocomplete="off">
-								<div class="autocomplete">
-								  <div id="myInputautocomplete-list" class="autocomplete-items">
-								  </div>
-								</div>
-								<button type="submit"><i class="icofont-search-1"></i></button>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-2 col-sm-6 col-7 remove-padding order-lg-last">
-					<div class="helpful-links">
-						<ul class="helpful-links-inner">
-							<li class="my-dropdown"  data-toggle="tooltip" data-placement="top" title="{{ $langg->lang3 }}">
-								<a href="javascript:;" class="cart carticon">
-									<div class="icon">
-										<i class="icofont-cart"></i>
-										<span class="cart-quantity" id="cart-count">{{ Session::has('cart') ? count(Session::get('cart')->items) : '0' }}</span>
-									</div>
-
-								</a>
-								<div class="my-dropdown-menu" id="cart-items">
-									@include('load.cart')
-								</div>
-							</li>
-							<li class="wishlist"  data-toggle="tooltip" data-placement="top" title="{{ $langg->lang9 }}">
-								@if(Auth::guard('web')->check())
-									<a href="{{ route('user-wishlists') }}" class="wish">
-										<i class="far fa-heart"></i>
-										<span id="wishlist-count">{{ count(Auth::user()->wishlists) }}</span>
-									</a>
-								@else
-									<a href="javascript:;" data-toggle="modal" id="wish-btn" data-target="#comment-log-reg" class="wish">
-										<i class="far fa-heart"></i>
-										<span id="wishlist-count">0</span>
-									</a>
-								@endif
-							</li>
-							<li class="compare"  data-toggle="tooltip" data-placement="top" title="{{ $langg->lang10 }}">
-								<a href="{{ route('product.compare') }}" class="wish compare-product">
-									<div class="icon">
-										<i class="fas fa-exchange-alt"></i>
-										<span id="compare-count">{{ Session::has('compare') ? count(Session::get('compare')->items) : '0' }}</span>
-									</div>
-								</a>
-							</li>
-
-
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Logo Header Area End -->
-
-	<!--Main-Menu Area Start-->
-	<div class="mainmenu-area mainmenu-bb">
-		<div class="container">
-			<div class="row align-items-center mainmenu-area-innner">
-				<div class="col-lg-3 col-md-6 categorimenu-wrapper remove-padding">
-					<!--categorie menu start-->
-					<div class="categories_menu">
-						<div class="categories_title">
-							<h2 class="categori_toggle"><i class="fa fa-bars"></i>  {{ $langg->lang14 }} <i class="fa fa-angle-down arrow-down"></i></h2>
-						</div>
-						<div class="categories_menu_inner">
-							<ul>
-								@php
-								$i=1;
-								@endphp
-								@foreach($categories as $category)
-
-								<li class="{{count($category->subs) > 0 ? 'dropdown_list':''}} {{ $i >= 15 ? 'rx-child' : '' }}">
-								@if(count($category->subs) > 0)
-									<div class="img">
-										<img src="{{ asset('assets/images/categories/'.$category->photo) }}" alt="">
-									</div>
-									<div class="link-area">
-										<span><a href="{{ route('front.category',$category->slug) }}">{{ $category->name }}</a></span>
-										@if(count($category->subs) > 0)
-										<a href="javascript:;">
-											<i class="fa fa-angle-right" aria-hidden="true"></i>
-										</a>
-										@endif
-									</div>
-
-								@else
-									<a href="{{ route('front.category',$category->slug) }}"><img src="{{ asset('assets/images/categories/'.$category->photo) }}"> {{ $category->name }}</a>
-
-								@endif
-									@if(count($category->subs) > 0)
-
-									@php
-									$ck = 0;
-									foreach($category->subs as $subcat) {
-										if(count($subcat->childs) > 0) {
-											$ck = 1;
-											break;
-										}
-									}
-									@endphp
-									<ul class="{{ $ck == 1 ? 'categories_mega_menu' : 'categories_mega_menu column_1' }}">
-										@foreach($category->subs as $subcat)
-											<li>
-												<a href="{{ route('front.subcat',['slug1' => $subcat->category->slug, 'slug2' => $subcat->slug]) }}">{{$subcat->name}}</a>
-												@if(count($subcat->childs) > 0)
-													<div class="categorie_sub_menu">
-														<ul>
-															@foreach($subcat->childs as $childcat)
-															<li><a href="{{ route('front.childcat',['slug1' => $childcat->subcategory->category->slug, 'slug2' => $childcat->subcategory->slug, 'slug3' => $childcat->slug]) }}">{{$childcat->name}}</a></li>
-															@endforeach
-														</ul>
-													</div>
-												@endif
-											</li>
-										@endforeach
-									</ul>
-
-									@endif
-
-									</li>
-
-									@php
-									$i++;
-									@endphp
-
-									@if($i == 15)
-						                <li>
-						                <a href="{{ route('front.categories') }}"><i class="fas fa-plus"></i> {{ $langg->lang15 }} </a>
-						                </li>
-						                @break
-									@endif
-
-
-									@endforeach
-
-							</ul>
-						</div>
-					</div>
-					<!--categorie menu end-->
-				</div>
-				<div class="col-lg-9 col-md-6 mainmenu-wrapper remove-padding">
-					<nav hidden>
-						<div class="nav-header">
-							<button class="toggle-bar"><span class="fa fa-bars"></span></button>
-						</div>
-						<ul class="menu">
-							@if($gs->is_home == 1)
-							<li><a href="{{ route('front.index') }}">{{ $langg->lang17 }}</a></li>
-							@endif
-							<!--<li><a href="{{ route('front.blog') }}">{{ $langg->lang18 }}</a></li>-->
-							@if($gs->is_faq == 1)
-							<!--<li><a href="{{ route('front.faq') }}">{{ $langg->lang19 }}</a></li>-->
-							@endif
-							@foreach(DB::table('pages')->where('header','=',1)->get() as $data)
-								<li><a href="{{ route('front.page',$data->slug) }}">{{ $data->title }}</a></li>
-							@endforeach
-							@if($gs->is_contact == 1)
-							<li><a href="{{ route('front.contact') }}">{{ $langg->lang20 }}</a></li>
-							@endif
-							<li><a href="/Bus-Search">Bus Booking</a></li>
-							<!--<li>-->
-							<!--	<a href="javascript:;" data-toggle="modal" data-target="#track-order-modal" class="track-btn">{{ $langg->lang16 }}</a>-->
-							<!--</li>-->
-						</ul>
-
-					</nav>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--Main-Menu Area End-->
-
-@yield('content')
-
-	<!-- Footer Area Start -->
-	<footer class="footer" id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-6">
-					<div class="footer-info-area">
-						<div class="footer-logo">
-							<a href="{{ route('front.index') }}" class="logo-link">
-								<img src="{{asset('assets/images/'.$gs->footer_logo)}}" alt="">
-							</a>
-						</div>
-						<div class="text">
-							<p>
-									{!! $gs->footer !!}
-							</p>
-						</div>
-					</div>
-					<div class="fotter-social-links">
-						<ul>
-
-                               	     @if(App\Models\Socialsetting::find(1)->f_status == 1)
-                                      <li>
-                                        <a href="{{ App\Models\Socialsetting::find(1)->facebook }}" class="facebook" target="_blank">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                      </li>
-                                      @endif
-
-                                      @if(App\Models\Socialsetting::find(1)->g_status == 1)
-                                      <li>
-                                        <a href="{{ App\Models\Socialsetting::find(1)->gplus }}" class="google-plus" target="_blank">
-                                            <i class="fab fa-google-plus-g"></i>
-                                        </a>
-                                      </li>
-                                      @endif
-
-                                      @if(App\Models\Socialsetting::find(1)->t_status == 1)
-                                      <li>
-                                        <a href="{{ App\Models\Socialsetting::find(1)->twitter }}" class="twitter" target="_blank">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                      </li>
-                                      @endif
-
-                                      @if(App\Models\Socialsetting::find(1)->l_status == 1)
-                                      <li>
-                                        <a href="{{ App\Models\Socialsetting::find(1)->linkedin }}" class="linkedin" target="_blank">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                      </li>
-                                      @endif
-
-                                      @if(App\Models\Socialsetting::find(1)->d_status == 1)
-                                      <li>
-                                        <a href="{{ App\Models\Socialsetting::find(1)->dribble }}" class="dribbble" target="_blank">
-                                            <i class="fab fa-dribbble"></i>
-                                        </a>
-                                      </li>
-                                      @endif
-                                      <li>
-                                        <a href="" class="Instagram" target="_blank">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                      </li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-12 col-lg-6">
-					<div class="footer-widget info-link-widget">
-						<!--<h4 class="title">-->
-						<!--		{{ $langg->lang21 }}-->
-						<!--</h4>-->
-						<ul class="link-list">
-							<li>
-								<a href="{{ route('front.index') }}">
-									<i class="fas fa-angle-double-right"></i>{{ $langg->lang22 }}
-								</a>
-							</li>
-
-							@foreach(DB::table('pages')->where('footer','=',1)->get() as $data)
-							<li>
-								<a href="{{ route('front.page',$data->slug) }}">
-									<i class="fas fa-angle-double-right"></i>{{ $data->title }}
-								</a>
-							</li>
-							@endforeach
-
-							<li>
-								<a href="{{ route('front.contact') }}">
-									<i class="fas fa-angle-double-right"></i>{{ $langg->lang23 }}
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!--<div class="col-md-6 col-lg-4">-->
-				<!--	<div class="footer-widget recent-post-widget">-->
-						<!--<h4 class="title">-->
-						<!--	{{ $langg->lang24 }}-->
-						<!--</h4>-->
-				<!--		<ul class="post-list">-->
-				<!--			@foreach (App\Models\Blog::orderBy('created_at', 'desc')->limit(3)->get() as $blog)-->
-							<!--<li>-->
-							<!--	<div class="post">-->
-							<!--	  <div class="post-img">-->
-							<!--		<img style="width: 73px; height: 59px;" src="{{ asset('assets/images/blogs/'.$blog->photo) }}" alt="">-->
-							<!--	  </div>-->
-							<!--	  <div class="post-details">-->
-							<!--		<a href="{{ route('front.blogshow',$blog->id) }}">-->
-							<!--			<h4 class="post-title">-->
-							<!--				{{strlen($blog->title) > 45 ? substr($blog->title,0,45)." .." : $blog->title}}-->
-							<!--			</h4>-->
-							<!--		</a>-->
-							<!--		<p class="date">-->
-							<!--			{{ date('M d - Y',(strtotime($blog->created_at))) }}-->
-							<!--		</p>-->
-							<!--	  </div>-->
-							<!--	</div>-->
-							<!--  </li>-->
-				<!--			@endforeach-->
-				<!--		</ul>-->
-				<!--	</div>-->
-				<!--</div>-->
-			</div>
-		</div>
-
-		<div class="copy-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-							<div class="content">
-								<div class="content">
-									<p>{!! $gs->copyright !!}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Footer Area End -->
-
-	<!-- Back to Top Start -->
-	<div class="bottomtotop">
-		<i class="fas fa-chevron-right"></i>
-	</div>
-	<!-- Back to Top End -->
-
-	<!-- LOGIN MODAL -->
-	<div class="modal fade" id="comment-log-reg" tabindex="-1" role="dialog" aria-labelledby="comment-log-reg-Title"
-		aria-hidden="true">
-		<div class="modal-dialog  modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<nav class="comment-log-reg-tabmenu">
-						<div class="nav nav-tabs" id="nav-tab" role="tablist">
-							<a class="nav-item nav-link login active" id="nav-log-tab1" data-toggle="tab" href="#nav-log1"
-								role="tab" aria-controls="nav-log" aria-selected="true">
-								{{ $langg->lang197 }}
-							</a>
-							<a class="nav-item nav-link" id="nav-reg-tab1" data-toggle="tab" href="#nav-reg1" role="tab"
-								aria-controls="nav-reg" aria-selected="false">
-								{{ $langg->lang198 }}
-							</a>
-						</div>
-					</nav>
-					<div class="tab-content" id="nav-tabContent">
-						<div class="tab-pane fade show active" id="nav-log1" role="tabpanel"
-							aria-labelledby="nav-log-tab1">
-							<div class="login-area">
-								<div class="header-area">
-									<h4 class="title">{{ $langg->lang172 }}</h4>
-								</div>
-								<div class="login-form signin-form">
-									@include('includes.admin.form-login')
-									<form class="mloginform" action="{{ route('user.login.submit') }}" method="POST">
-										{{ csrf_field() }}
-										<div class="form-input">
-											<input type="email" name="email" placeholder="{{ $langg->lang173 }}"
-												required="">
-											<i class="icofont-user-alt-5"></i>
-										</div>
-										<div class="form-input">
-											<input type="password" class="Password" name="password"
-												placeholder="{{ $langg->lang174 }}" required="">
-											<i class="icofont-ui-password"></i>
-										</div>
-										<div class="form-forgot-pass">
-											<div class="left">
-												<input type="checkbox" name="remember" id="mrp"
-													{{ old('remember') ? 'checked' : '' }}>
-												<label for="mrp">{{ $langg->lang175 }}</label>
-											</div>
-											<div class="right">
-												<a href="javascript:;" id="show-forgot">
-													{{ $langg->lang176 }}
-												</a>
-											</div>
-										</div>
-										<input type="hidden" name="modal" value="1">
-										<input class="mauthdata" type="hidden" value="{{ $langg->lang177 }}">
-										<button type="submit" class="submit-btn">{{ $langg->lang178 }}</button>
-										@if(App\Models\Socialsetting::find(1)->f_check == 1 ||
-										App\Models\Socialsetting::find(1)->g_check == 1)
-										<div class="social-area">
-											<h3 class="title">{{ $langg->lang179 }}</h3>
-											<p class="text">{{ $langg->lang180 }}</p>
-											<ul class="social-links">
-												@if(App\Models\Socialsetting::find(1)->f_check == 1)
-												<li>
-													<a href="{{ route('social-provider','facebook') }}">
-														<i class="fab fa-facebook-f"></i>
-													</a>
-												</li>
-												@endif
-												@if(App\Models\Socialsetting::find(1)->g_check == 1)
-												<li>
-													<a href="{{ route('social-provider','google') }}">
-														<i class="fab fa-google-plus-g"></i>
-													</a>
-												</li>
-												@endif
-											</ul>
-										</div>
-										@endif
-									</form>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane fade" id="nav-reg1" role="tabpanel" aria-labelledby="nav-reg-tab1">
-							<div class="login-area signup-area">
-								<div class="header-area">
-									<h4 class="title">{{ $langg->lang181 }}</h4>
-								</div>
-								<div class="login-form signup-form">
-									@include('includes.admin.form-login')
-									<form class="mregisterform" action="{{route('user-register-submit')}}"
-										method="POST">
-										{{ csrf_field() }}
-
-										<div class="form-input">
-											<input type="text" class="User Name" name="name"
-												placeholder="{{ $langg->lang182 }}" required="">
-											<i class="icofont-user-alt-5"></i>
-										</div>
-
-										<div class="form-input">
-											<input type="email" class="User Name" name="email"
-												placeholder="{{ $langg->lang183 }}" required="">
-											<i class="icofont-email"></i>
-										</div>
-
-										<div class="form-input">
-											<input type="text" class="User Name" name="phone"
-												placeholder="{{ $langg->lang184 }}" required="">
-											<i class="icofont-phone"></i>
-										</div>
-
-										<div class="form-input">
-											<input type="text" class="User Name" name="address"
-												placeholder="{{ $langg->lang185 }}" required="">
-											<i class="icofont-location-pin"></i>
-										</div>
-
-										<div class="form-input">
-											<input type="password" class="Password" name="password"
-												placeholder="{{ $langg->lang186 }}" required="">
-											<i class="icofont-ui-password"></i>
-										</div>
-
-										<div class="form-input">
-											<input type="password" class="Password" name="password_confirmation"
-												placeholder="{{ $langg->lang187 }}" required="">
-											<i class="icofont-ui-password"></i>
-										</div>
-
-
-										@if($gs->is_capcha == 1)
-
-										<ul class="captcha-area">
-											<li>
-												<p><img class="codeimg1"
-														src="{{asset("assets/images/capcha_code.png")}}" alt=""> <i
-														class="fas fa-sync-alt pointer refresh_code "></i></p>
-											</li>
-										</ul>
-
-										<div class="form-input">
-											<input type="text" class="Password" name="codes"
-												placeholder="{{ $langg->lang51 }}" required="">
-											<i class="icofont-refresh"></i>
-										</div>
-
-
-										@endif
-
-										<input class="mprocessdata" type="hidden" value="{{ $langg->lang188 }}">
-										<button type="submit" class="submit-btn">{{ $langg->lang189 }}</button>
-
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- LOGIN MODAL ENDS -->
-
-	<!-- FORGOT MODAL -->
-	<div class="modal fade" id="forgot-modal" tabindex="-1" role="dialog" aria-labelledby="comment-log-reg-Title"
-		aria-hidden="true">
-		<div class="modal-dialog  modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-
-					<div class="login-area">
-						<div class="header-area forgot-passwor-area">
-							<h4 class="title">{{ $langg->lang191 }} </h4>
-							<p class="text">{{ $langg->lang192 }} </p>
-						</div>
-						<div class="login-form">
-							@include('includes.admin.form-login')
-							<form id="mforgotform" action="{{route('user-forgot-submit')}}" method="POST">
-								{{ csrf_field() }}
-								<div class="form-input">
-									<input type="email" name="email" class="User Name"
-										placeholder="{{ $langg->lang193 }}" required="">
-									<i class="icofont-user-alt-5"></i>
-								</div>
-								<div class="to-login-page">
-									<a href="javascript:;" id="show-login">
-										{{ $langg->lang194 }}
-									</a>
-								</div>
-								<input class="fauthdata" type="hidden" value="{{ $langg->lang195 }}">
-								<button type="submit" class="submit-btn">{{ $langg->lang196 }}</button>
-							</form>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- FORGOT MODAL ENDS -->
-
-
-<!-- VENDOR LOGIN MODAL -->
-	<div class="modal fade" id="vendor-login" tabindex="-1" role="dialog" aria-labelledby="vendor-login-Title" aria-hidden="true">
-  <div class="modal-dialog  modal-dialog-centered" style="transition: .5s;" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-				<nav class="comment-log-reg-tabmenu">
-					<div class="nav nav-tabs" id="nav-tab1" role="tablist">
-						<a class="nav-item nav-link login active" id="nav-log-tab11" data-toggle="tab" href="#nav-log11" role="tab" aria-controls="nav-log" aria-selected="true">
-							{{ $langg->lang234 }}
-						</a>
-						<a class="nav-item nav-link" id="nav-reg-tab11" data-toggle="tab" href="#nav-reg11" role="tab" aria-controls="nav-reg" aria-selected="false">
-							{{ $langg->lang235 }}
-						</a>
-					</div>
-				</nav>
-				<div class="tab-content" id="nav-tabContent">
-					<div class="tab-pane fade show active" id="nav-log11" role="tabpanel" aria-labelledby="nav-log-tab">
-				        <div class="login-area">
-				          <div class="login-form signin-form">
-				                @include('includes.admin.form-login')
-				            <form class="mloginform" action="{{ route('user.login.submit') }}" method="POST">
-				              {{ csrf_field() }}
-				              <div class="form-input">
-				                <input type="email" name="email" placeholder="{{ $langg->lang173 }}" required="">
-				                <i class="icofont-user-alt-5"></i>
-				              </div>
-				              <div class="form-input">
-				                <input type="password" class="Password" name="password" placeholder="{{ $langg->lang174 }}" required="">
-				                <i class="icofont-ui-password"></i>
-				              </div>
-				              <div class="form-forgot-pass">
-				                <div class="left">
-				                  <input type="checkbox" name="remember"  id="mrp1" {{ old('remember') ? 'checked' : '' }}>
-				                  <label for="mrp1">{{ $langg->lang175 }}</label>
-				                </div>
-				                <div class="right">
-				                  <a href="javascript:;" id="show-forgot1">
-				                    {{ $langg->lang176 }}
-				                  </a>
-				                </div>
-				              </div>
-				              <input type="hidden" name="modal"  value="1">
-				               <input type="hidden" name="vendor"  value="1">
-				              <input class="mauthdata" type="hidden"  value="{{ $langg->lang177 }}">
-				              <button type="submit" class="submit-btn">{{ $langg->lang178 }}</button>
-					              @if(App\Models\Socialsetting::find(1)->f_check == 1 || App\Models\Socialsetting::find(1)->g_check == 1)
-					              <div class="social-area">
-					                  <h3 class="title">{{ $langg->lang179 }}</h3>
-					                  <p class="text">{{ $langg->lang180 }}</p>
-					                  <ul class="social-links">
-					                    @if(App\Models\Socialsetting::find(1)->f_check == 1)
-					                    <li>
-					                      <a href="{{ route('social-provider','facebook') }}">
-					                        <i class="fab fa-facebook-f"></i>
-					                      </a>
-					                    </li>
-					                    @endif
-					                    @if(App\Models\Socialsetting::find(1)->g_check == 1)
-					                    <li>
-					                      <a href="{{ route('social-provider','google') }}">
-					                        <i class="fab fa-google-plus-g"></i>
-					                      </a>
-					                    </li>
-					                    @endif
-					                  </ul>
-					              </div>
-					              @endif
-				            </form>
-				          </div>
-				        </div>
-					</div>
-					<div class="tab-pane fade" id="nav-reg11" role="tabpanel" aria-labelledby="nav-reg-tab">
-                <div class="login-area signup-area">
-                    <div class="login-form signup-form">
-                       @include('includes.admin.form-login')
-                        <form class="mregisterform" action="{{route('user-register-submit')}}" method="POST">
-                          {{ csrf_field() }}
-
-                          <div class="row">
-
-                          <div class="col-lg-6">
-                            <div class="form-input">
-                                <input type="text" class="User Name" name="name" placeholder="{{ $langg->lang182 }}" required="">
-                                <i class="icofont-user-alt-5"></i>
-                            	</div>
-                           </div>
-
-                           <div class="col-lg-6">
- <div class="form-input">
-                                <input type="email" class="User Name" name="email" placeholder="{{ $langg->lang183 }}" required="">
-                                <i class="icofont-email"></i>
-                            </div>
-
-                           	</div>
-                           <div class="col-lg-6">
-    <div class="form-input">
-                                <input type="text" class="User Name" name="phone" placeholder="{{ $langg->lang184 }}" required="">
-                                <i class="icofont-phone"></i>
-                            </div>
-
-                           	</div>
-<!--                           <div class="col-lg-6">-->
-
-<!--<div class="form-input">-->
-<!--                                <input type="text" class="User Name" name="address" placeholder="{{ $langg->lang185 }}" required="">-->
-<!--                                <i class="icofont-location-pin"></i>-->
-<!--                            </div>-->
-<!--                           	</div>-->
-
-                           <div class="col-lg-6">
- <div class="form-input">
-                                <input type="text" class="User Name" name="shop_name" placeholder="{{ $langg->lang238 }}" required="">
-                                <i class="icofont-cart-alt"></i>
-                            </div>
-
-                           	</div>
-                           <div class="col-lg-6">
-
- <div class="form-input">
-                                <input type="text" class="User Name" name="owner_name" placeholder="{{ $langg->lang239 }}" required="">
-                                <i class="icofont-cart"></i>
-                            </div>
-                           	</div>
-                           <!--<div class="col-lg-6">-->
-
-<!--<div class="form-input">-->
-<!--                                <input type="text" class="User Name" name="shop_number" placeholder="{{ $langg->lang240 }}" required="">-->
-<!--                                <i class="icofont-shopping-cart"></i>-->
-<!--                            </div>-->
-                           	<!--</div>-->
- <!--                          <div class="col-lg-6">-->
-
- <!--<div class="form-input">-->
- <!--                               <input type="text" class="User Name" name="shop_address" placeholder="{{ $langg->lang241 }}" required="">-->
- <!--                               <i class="icofont-opencart"></i>-->
- <!--                           </div>-->
- <!--                          	</div>-->
-<!--                           <div class="col-lg-6">-->
-
-<!--<div class="form-input">-->
-<!--                                <input type="text" class="User Name" name="reg_number" placeholder="{{ $langg->lang242 }}" required="">-->
-<!--                                <i class="icofont-ui-cart"></i>-->
-<!--                            </div>-->
-<!--                           	</div>-->
- <!--                          <div class="col-lg-6">-->
-
- <!--<div class="form-input">-->
- <!--                               <input type="text" class="User Name" name="shop_message" placeholder="{{ $langg->lang243 }}" required="">-->
- <!--                               <i class="icofont-envelope"></i>-->
- <!--                           </div>-->
- <!--                          	</div>-->
-
-                           <div class="col-lg-6">
-  <div class="form-input">
-                                <input type="password" class="Password" name="password" placeholder="{{ $langg->lang186 }}" required="">
-                                <i class="icofont-ui-password"></i>
-                            </div>
-
-                           	</div>
-                           <div class="col-lg-6">
- 								<div class="form-input">
-                                <input type="password" class="Password" name="password_confirmation" placeholder="{{ $langg->lang187 }}" required="">
-                                <i class="icofont-ui-password"></i>
-                            	</div>
-                           	</div>
-
-                            @if($gs->is_capcha == 1)
-
-<div class="col-lg-6">
-
-
-                            <ul class="captcha-area">
-                                <li>
-                                 	<p>
-                                 		<img class="codeimg1" src="{{asset("assets/images/capcha_code.png")}}" alt=""> <i class="fas fa-sync-alt pointer refresh_code "></i>
-                                 	</p>
-
-                                </li>
-                            </ul>
-
-
-</div>
-
-<div class="col-lg-6">
-
- <div class="form-input">
-                                <input type="text" class="Password" name="codes" placeholder="{{ $langg->lang51 }}" required="">
-                                <i class="icofont-refresh"></i>
-
-                            </div>
-
-
-
-                          </div>
-
-                          @endif
-
-				            <input type="hidden" name="vendor"  value="1">
-                            <input class="mprocessdata" type="hidden"  value="{{ $langg->lang188 }}">
-                            <button type="submit" class="submit-btn">{{ $langg->lang189 }}</button>
-
-                           	</div>
-
-
-
-
-                        </form>
+<div class="wrapper ovh">
+    <div class=preloader></div>
+    <div class="header_middle pt20 pb20 dn-992">
+        <div class=container>
+            <div class=row>
+                <div class="col-lg-2 col-xxl-2">
+                    <div class=header_top_logo_home1>
+                        {{--                        <div class=logo>Bixcash<span class=text-thm>.</span></div>--}}
+                        <a href="{{ route('front.index') }}">
+                            <img width="150px" src="{{asset('assets/images/'.$gs->logo)}}" alt="">
+                        </a>
                     </div>
                 </div>
-					</div>
-				</div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- VENDOR LOGIN MODAL ENDS -->
+                <div class="col-lg-5 col-xxl-6">
+                    <div class=header_middle_advnc_search>
+                        <div class=search_form_wrapper>
+                            <div class=row>
+                                <div class="col-auto pr0">
+                                    <div class=actegory>
+                                        <select class=selectpicker name="category" id="category_select">
+                                            <option value="">{{ $langg->lang1 }}</option>
+                                            @foreach($categories as $data)
+                                                <option value="{{ $data->slug }}" {{ Request::route('category') == $data->slug ? 'selected' : '' }}>{{ $data->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
-<!-- Product Quick View Modal -->
+                                <div class="col-auto p0">
 
-	  <div class="modal fade" id="quickview" tabindex="-1" role="dialog"  aria-hidden="true">
-		<div class="modal-dialog quickview-modal modal-dialog-centered modal-lg" role="document">
-		  <div class="modal-content">
-			<div class="submit-loader">
-				<img src="{{asset('assets/images/'.$gs->loader)}}" alt="">
-			</div>
-			<div class="modal-header">
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-				<div class="container quick-view-modal">
+                                    <div class=top-search>
+                                        <form class="form-search" id="searchForm" method="GET"
+                                              action="{{ route('front.category', [Request::route('category'),Request::route('subcategory'),Request::route('childcategory')]) }}"
+                                              accept-charset=utf-8>
+                                            <div class="box-search pre_line">
+                                                @if (!empty(request()->input('sort')))
+                                                    <input type="hidden" name="sort"
+                                                           value="{{ request()->input('sort') }}">
+                                                @endif
+                                                @if (!empty(request()->input('minprice')))
+                                                    <input type="hidden" name="minprice"
+                                                           value="{{ request()->input('minprice') }}">
+                                                @endif
+                                                @if (!empty(request()->input('maxprice')))
+                                                    <input type="hidden" name="maxprice"
+                                                           value="{{ request()->input('maxprice') }}">
+                                                @endif
+                                                <input class=form_control id="prod_name" name="search"
+                                                       placeholder="{{ $langg->lang2 }}"
+                                                       value="{{ request()->input('search') }}" autocomplete="off">
 
-				</div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-<!-- Product Quick View Modal -->
+                                                <div class=search-suggestions>
+                                                    <div class=box-suggestions>
+                                                        <ul>
+                                                            <li>
+                                                                <div class=thumb><img src=images/listing/sf1.png
+                                                                                      alt=sf1.png></div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Sony DJ Headphones 4334205465,
+                                                                        Black, Standard
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb><img src=images/listing/sf2.png
+                                                                                      alt=sf2.png></div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Sony E-Mount Full Frame FE
+                                                                        24-70mm f/2.8 GM II G Master
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb><img src=images/listing/sf3.png
+                                                                                      alt=sf3.png></div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>TV 55" 4-Series 4K UHD smart
+                                                                        TV
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb><img src=images/listing/sf4.png
+                                                                                      alt=sf4.png></div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Hugolog Baby Monitor, 2K
+                                                                        Security Camera, PT Cameras for
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb><img src=images/listing/sf5.png
+                                                                                      alt=sf5.png></div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Apple iPhone Retina 6s Plus
+                                                                        64GB
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
 
-<!-- Order Tracking modal Start-->
-    <div class="modal fade" id="track-order-modal" tabindex="-1" role="dialog" aria-labelledby="order-tracking-modal" aria-hidden="true">
-        <div class="modal-dialog  modal-lg" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title"> <b>{{ $langg->lang772 }}</b> </h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                        <div class="order-tracking-content">
-                            <form id="track-form" class="track-form">
-                                {{ csrf_field() }}
-                                <input type="text" id="track-code" placeholder="{{ $langg->lang773 }}" required="">
-                                <button type="submit" class="mybtn1">{{ $langg->lang774 }}</button>
-                                <a href="#"  data-toggle="modal" data-target="#order-tracking-modal"></a>
-                            </form>
+                                    </div>
+                                </div>
+                                <div class="col-auto p0">
+                                    <div class=advscrh_frm_btn>
+                                        <button type=submit class="btn search-btn"><span class=flaticon-search></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div>
-				            <div class="submit-loader d-none">
-								<img src="{{asset('assets/images/'.$gs->loader)}}" alt="">
-							</div>
-							<div id="track-order">
-
-							</div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-xxl-4 pr0-lg">
+                    <div class="hm_log_fav_cart_widget justify-content-center">
+                        <div class=wrapper>
+                            <ul class=mb0>
+                                <li class=list-inline-item><a class=header_top_iconbox href="{{ route('user-wishlists') }}">
+                                        <div class="d-block d-md-flex">
+                                            <div class=icon><span class=flaticon-heart></span></div>
+                                            <div class=details>
+                                                <p class=subtitle>Wishlist</p>
+                                                <h5 class=title>My Items</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class=list-inline-item>
+                                    @if(!Auth::guard('web')->check())
+                                    <a class="header_top_iconbox signin-filter-btn" href=#>
+                                        <div class="d-block d-md-flex">
+                                            <div class=icon><span class=flaticon-profile></span></div>
+                                            <div class=details>
+                                                <p class=subtitle>Sign In</p>
+                                                <h5 class=title>Account</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    @else
+                                        <a class="header_top_iconbox signin-filter-btn" href="{{ Auth::user()->IsVendor() == 1 ? route('vendor-dashboard') : route('user-dashboard') }}">
+                                            <div class="d-block d-md-flex">
+                                                <div class=icon><span class=flaticon-profile></span></div>
+                                                <div class=details>
+                                                    <p class=subtitle>Welcome!</p>
+                                                    <h5 class=title>{{ $langg->lang11 }}</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endif
+                                </li>
+                                <li class=list-inline-item><a class="header_top_iconbox cart-filter-btn" href=#>
+                                        <div class="d-block d-md-flex">
+                                            <div class=icon><span><img src={{ asset("images/icons/flaticon-shopping-cart-white.svg")}}
+                                                                       alt=""></span><span class=badge>{{ Session::has('cart') ? count(Session::get('cart')->items) : '0' }}</span></div>
+                                            <div class=details>
+                                                <p class=subtitle>{{ Session::has('cart') ? App\Models\Product::convertPrice(Session::get('cart')->totalPrice) : '0.00' }}</p>
+                                                <h5 class=title>Total</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-
-            </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-<!-- Order Tracking modal End -->
+    <header class="header-nav menu_style_home_one main-menu">
+        <nav class=posr>
+            <div class="container posr menu_bdrt1">
+                <div class=menu-toggle>
+                    <button type=button id=menu-btn>
+                        <span class=icon-bar></span>
+                        <span class=icon-bar></span>
+                        <span class=icon-bar></span>
+                    </button>
+                </div>
+                <div class="posr logo1 home1_style">
+                    <div id=mega-menu>
+                        <a class=btn-mega href=#>
+                            <img class=me-2 src="{{ asset("images/desktop-nav-menu-white.svg")}}" alt="Desktop Menu Icon">
+                            <span class="fw500 fz16 color-white vam">{{ $langg->lang14 }}</span>
+                        </a>
+                        <ul class=menu>
+                            @foreach($categories as $category)
+                                @if(count($category->subs) == 0)
+                                    <li>
+                                        <a href=#>
+                                    <span class="menu-icn">
+                                        <img width="20px" src="{{ asset('assets/images/categories/'.$category->photo) }}" alt="">
+                                    </span>
+                                            <span class=menu-title>{{ $category->name }}</span>
+                                        </a>
+                                    </li>
 
-<script type="text/javascript">
-  var mainurl = "{{url('/')}}";
-  var gs      = {!! json_encode($gs) !!};
-  var langg    = {!! json_encode($langg) !!};
+                                    @else
+                                    <li>
+                                        <a class=dropdown href=#>
+                                    <span class="menu-icn">
+                                        <img width="20px" src="{{ asset('assets/images/categories/'.$category->photo) }}" alt="">
+                                    </span>
+                                            <span class=menu-title>{{ $category->name }}</span>
+                                        </a>
+                                        <div class=drop-menu>
+                                            <div class=one-third>
+                                                <div class=cat-title>{{ $category->name }}</div>
+                                                <ul class=mb0>
+                                                    @foreach($category->subs as $subcat)
+                                                        <li>
+                                                            <a href="#">{{$subcat->name}}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endif
+                            @endforeach
 
-</script>
+                        </ul>
+                    </div>
+                </div>
+                <ul id=respMenu class="ace-responsive-menu menu_list_custom_code wa pl200" data-menu-style=horizontal>
+{{--                    @if($gs->is_home == 1)--}}
+                    <li><a href="{{ route('front.index') }}"><span class=title>Home</span></a></li>
+{{--                    @endif--}}
+                    <li class=megamenu_style><a href=#><span class=title>Shop</span></a>
+                        <ul class="row dropdown-megamenu">
+                            @foreach($categories as $category)
+                                @if(count($category->subs) > 0)
+                                    <li class="col mega_menu_list pl30">
+                                        <h4 class=title>{{ $category->name }}</h4>
+                                        <ul>
+                                            @foreach($category->subs as $subcat)
+                                                <li><a href="#">{{ $subcat->name }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </li>
 
-	<!-- jquery -->
-	<script src="{{asset('assets/front/js/jquery.js')}}"></script>
-	{{-- <script src="{{asset('assets/front/js/vue.js')}}"></script> --}}
-	<script src="{{asset('assets/front/jquery-ui/jquery-ui.min.js')}}"></script>
-	<!-- popper -->
-	<script src="{{asset('assets/front/js/popper.min.js')}}"></script>
-	<!-- bootstrap -->
-	<script src="{{asset('assets/front/js/bootstrap.min.js')}}"></script>
-	<!-- plugin js-->
-	<script src="{{asset('assets/front/js/plugin.js')}}"></script>
+                    @foreach(DB::table('pages')->where('header','=',1)->get() as $data)
+                        <li><a href="{{ route('front.page',$data->slug) }}"><span class=title>{{ $data->title }}</span></a></li>
+                    @endforeach
+                </ul>
+                <ul id=respMenu2 class="ace-responsive-menu widget_menu_home2 wa" data-menu-style=horizontal>
+                    <li class="list-inline-item list_c"><a href=#>{{ $langg->lang20 }}</a></li>
 
-	<script src="{{asset('assets/front/js/xzoom.min.js')}}"></script>
-	<script src="{{asset('assets/front/js/jquery.hammer.min.js')}}"></script>
-	<script src="{{asset('assets/front/js/setup.js')}}"></script>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class=hiddenbar-body-ovelay></div>
+    <div class=signin-hidden-sbar>
+        <div class=hsidebar-header>
+            <div class=sidebar-close-icon><span class=flaticon-close></span></div>
+            <h4 class=title>Sign-In</h4>
+        </div>
+        <div class=hsidebar-content>
+            <div class="log_reg_form sidebar_area">
+                <div class=login_form>
+                    <form action=#>
+                        <div class="mb-2 mr-sm-2">
+                            <label class=form-label>Username or email address</label>
+                            <input class=form-control placeholder="Ali Tufan">
+                        </div>
+                        <div class="form-group mb5">
+                            <label class=form-label>Password</label>
+                            <input type=password class=form-control placeholder=Password>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type=checkbox class=custom-control-input id=exampleCheck3>
+                            <label class=custom-control-label for=exampleCheck3>Remember me</label>
+                            <a class="btn-fpswd float-end" href=#>Lost your password?</a>
+                        </div>
+                        <button type=submit class="btn btn-log btn-thm mt20">Login</button>
+                        <p class="text-center mb25 mt10">Don't have an account? <a class=signup-filter-btn href=#>Create
+                                account</a></p>
+                        <div class=hr_content>
+                            <hr>
+                            <span class=hr_top_text>or</span>
+                        </div>
+                        <ul class="login_with_social text-center mt30 mb0">
+                            <li class=list-inline-item><a href=#><i class="fab fa-facebook"></i></a></li>
+                            <li class=list-inline-item><a href=#><i class="fab fa-google"></i></a></li>
+                            <li class=list-inline-item><a href=#><i class="fab fa-twitter"></i></a></li>
+                            <li class=list-inline-item><a href=#><i class="fab fa-apple"></i></a></li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @include('load.cart')
+    <div class=signup-hidden-sbar>
+        <div class=hsidebar-header>
+            <div class=sidebar-close-icon><span class=flaticon-close></span></div>
+            <h4 class=title>Create Your Account</h4>
+        </div>
+        <div class=hsidebar-content>
+            <div class="log_reg_form sidebar_area">
+                <div class=sign_up_form>
+                    <form action=#>
+                        <div class=form-group>
+                            <label class=form-label>Your Name</label>
+                            <input class=form-control placeholder="Ali Tufan">
+                        </div>
+                        <div class=form-group>
+                            <label class=form-label>Username</label>
+                            <input class=form-control placeholder=alitfn>
+                        </div>
+                        <div class=form-group>
+                            <label class=form-label>Your Email</label>
+                            <input type=email class=form-control placeholder=creativelayers088@gmail.com>
+                        </div>
+                        <div class="form-group mb20">
+                            <label class=form-label>Password</label>
+                            <input type=password class=form-control placeholder=******************>
+                        </div>
+                        <button type=submit class="btn btn-signup btn-thm">Create Account</button>
+                        <p class="text-center mb25 mt10">Already have an account? <a href=page-login.html>Sign in</a>
+                        </p>
+                        <div class=hr_content>
+                            <hr>
+                            <span class=hr_top_text>or</span>
+                        </div>
+                        <ul class="login_with_social text-center mt30 mb0">
+                            <li class=list-inline-item><a href=#><i class="fab fa-facebook"></i></a></li>
+                            <li class=list-inline-item><a href=#><i class="fab fa-google"></i></a></li>
+                            <li class=list-inline-item><a href=#><i class="fab fa-twitter"></i></a></li>
+                            <li class=list-inline-item><a href=#><i class="fab fa-apple"></i></a></li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id=page class=stylehome1>
+        <div class=mobile-menu>
+            <div class="header stylehome1">
+                <div class=menu_and_widgets>
+                    <div class="mobile_menu_bar float-start">
+                        <a class=menubar href=#menu><span></span></a>
+                        <a class=mobile_logo href=#>Bixcash<span class=text-thm>.</span></a>
+                    </div>
+                    <div class=mobile_menu_widget_icons>
+                        <ul class="cart mt15">
+                            <li class=list-inline-item>
+                                <a class="cart_btn signin-filter-btn" href=#><span class="icon flaticon-profile"></span></a>
+                            </li>
+                            <li class=list-inline-item>
+                                <a class="cart_btn cart-filter-btn" href=#><span class=icon><img
+                                                src=images/icons/flaticon-shopping-cart-white.svg alt=""></span><span
+                                            class="badge bgc-thm">2</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class=mobile_menu_search_widget>
+                    <div class=header_middle_advnc_search>
+                        <div class="container search_form_wrapper">
+                            <div class=row>
+                                <div>
+                                    <div class="top-search text-start">
+                                        <form action=# class=form-search accept-charset=utf-8>
+                                            <div class=box-search>
+                                                <input class=form_control name=search placeholder="Search products…">
+                                                <div class="search-suggestions text-start">
+                                                    <div class=box-suggestions>
+                                                        <ul>
+                                                            <li>
+                                                                <div class=thumb>
+                                                                    <img src=images/listing/sf1.png alt=sf1.png>
+                                                                </div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Sony DJ Headphones 4334205465,
+                                                                        Black, Standard
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb>
+                                                                    <img src=images/listing/sf2.png alt=sf2.png>
+                                                                </div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Sony E-Mount Full Frame FE
+                                                                        24-70mm f/2.8 GM II G Master
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb>
+                                                                    <img src=images/listing/sf3.png alt=sf3.png>
+                                                                </div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>TV 55" 4-Series 4K UHD smart
+                                                                        TV
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb>
+                                                                    <img src=images/listing/sf4.png alt=sf4.png>
+                                                                </div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Hugolog Baby Monitor, 2K
+                                                                        Security Camera, PT Cameras for
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class=thumb>
+                                                                    <img src=images/listing/sf5.png alt=sf5.png>
+                                                                </div>
+                                                                <div class=info-product>
+                                                                    <div class=item_title>Apple iPhone Retina 6s Plus
+                                                                        64GB
+                                                                    </div>
+                                                                    <div class=price><span class=sale>$32.50</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class=advscrh_frm_btn>
+                                        <button type=submit class="btn search-btn"><span class=flaticon-search></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=posr>
+                    <div class=mobile_menu_close_btn><span class=flaticon-close></span></div>
+                </div>
+            </div>
+        </div>
+        <nav id=menu class=stylehome1>
+            <ul>
+                <li><span>Home</span>
+                    <ul>
+                        <li><a href=index-2.html>Home V1</a></li>
+                        <li><a href=index2.html>Home V2</a></li>
+                        <li><a href=index3.html>Home V3</a></li>
+                        <li><a href=index4.html>Home V4</a></li>
+                        <li><a href=index5.html>Home V5</a></li>
+                        <li><a href=index6.html>Home V6</a></li>
+                        <li><a href=index7.html>Home V7</a></li>
+                        <li><a href=index8.html>Home V8</a></li>
+                        <li><a href=index9.html>Home V9</a></li>
+                        <li><a href=index10.html>Home V10</a></li>
+                    </ul>
+                </li>
+                <li><span>Shop</span>
+                    <ul>
+                        <li><span>Shop Listing</span>
+                            <ul>
+                                <li><a href=page-shop-list-v1.html>Listing v1</a></li>
+                                <li><a href=page-shop-list-v2.html>Listing v2</a></li>
+                                <li><a href=page-shop-list-v3.html>Listing v3</a></li>
+                                <li><a href=page-shop-list-v4.html>Listing v4</a></li>
+                                <li><a href=page-shop-list-v5.html>Listing v5</a></li>
+                                <li><a href=page-shop-list-v6.html>Listing v6</a></li>
+                                <li><a href=page-shop-list-v7.html>Listing v7</a></li>
+                                <li><a href=page-shop-list-v8.html>Listing v8</a></li>
+                            </ul>
+                        </li>
+                        <li><span>Shop Single</span>
+                            <ul>
+                                <li><a href=page-shop-single-v1.html>Version 1</a></li>
+                                <li><a href=page-shop-single-v2.html>Version 2</a></li>
+                                <li><a href=page-shop-single-v3.html>Version 3</a></li>
+                                <li><a href=page-shop-single-v4.html>Version 4</a></li>
+                                <li><a href=page-shop-single-v5.html>Version 5</a></li>
+                                <li><a href=page-shop-single-color-switch.html>Color Switch</a></li>
+                                <li><a href=page-shop-single-image-switch.html>Image Switch</a></li>
+                                <li><a href=page-shop-single-countdown.html>Single Countdown</a></li>
+                                <li><a href=page-shop-single-external-product.html>External Product</a></li>
+                                <li><a href=page-shop-single-grouped-product.html>Grouped Product</a></li>
+                                <li><a href=page-shop-single-bought-together.html>Bought Together</a></li>
+                            </ul>
+                        </li>
+                        <li><span>User Dashboard</span>
+                            <ul>
+                                <li><a href=page-dashboard.html>Dashboard</a></li>
+                                <li><a href=page-dashboard-order.html>Orders</a></li>
+                                <li><a href=page-dashboard-wish-list.html>Downloads</a></li>
+                                <li><a href=page-dashboard-address.html>Addresses</a></li>
+                                <li><a href=page-dashboard-account-details.html>Account Details</a></li>
+                                <li><a href=page-dashboard-wish-list.html>Wishlist</a></li>
+                                <li><a href=page-login.html>Logout</a></li>
+                            </ul>
+                        </li>
+                        <li><span>Shop Pages</span>
+                            <ul>
+                                <li><a href=page-shop-cart.html>Cart</a></li>
+                                <li><a href=page-shop-checkout.html>Checkout</a></li>
+                                <li><a href=page-shop-order-received.html>Order Received</a></li>
+                                <li><a href=page-order-tracking.html>Order Tracking</a></li>
+                                <li><a href=page-store-location.html>Store Locator</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><span>Pages</span>
+                    <ul>
+                        <li><a href=page-about.html>About Us</a></li>
+                        <li><span>Accounts</span>
+                            <ul>
+                                <li><a href=page-account-details.html>Account Details</a></li>
+                                <li><a href=page-account-order.html>Account Order</a></li>
+                                <li><a href=page-account-address.html>Account Address</a></li>
+                                <li><a href=page-account-wishlist.html>Account Wishlist</a></li>
+                                <li><a href=page-account-invoice.html>Account Invoice</a></li>
+                            </ul>
+                        </li>
+                        <li><a href=page-become-vendor.html>Become Vendor</a></li>
+                        <li><span>Vendor Pages</span>
+                            <ul>
+                                <li><a href=page-vendor-list.html>Vendor List</a></li>
+                                <li><a href=page-vendor-single.html>Vendor Single</a></li>
+                                <li><a href=page-dashboard.html>Dashboard</a></li>
+                                <li><a href=page-dashboard-products.html>Products</a></li>
+                                <li><a href=page-dashboard-order.html>Order</a></li>
+                                <li><a href=page-dashboard-customer.html>Customer</a></li>
+                                <li><a href=page-dashboard-categories.html>Categories</a></li>
+                                <li><a href=page-dashboard-message.html>Message</a></li>
+                                <li><a href=page-dashboard-setting.html>Settings</a></li>
+                            </ul>
+                        </li>
+                        <li><a href=page-brands.html>Brands</a></li>
+                        <li><a href=page-contact.html>Contact</a></li>
+                        <li><a href=page-coming-soon.html>Coming Soon</a></li>
+                        <li><a href=page-help.html>Help</a></li>
+                        <li><a href=page-error.html>404 Page</a></li>
+                        <li><a href=page-faq.html>Faq</a></li>
+                        <li><a href=page-invoices.html>Invoices</a></li>
+                        <li><a href=page-login.html>Login</a></li>
+                        <li><a href=page-register.html>Register</a></li>
+                        <li><a href=page-terms.html>Terms and Conditions</a></li>
+                        <li><a href=page-ui-element.html>UI Elements</a></li>
+                    </ul>
+                </li>
+                <li><span>Blog</span>
+                    <ul>
+                        <li><a href=page-blog-grid.html>Blog Grid</a></li>
+                        <li><a href=page-blog-grid-sidebar.html>Blog Grid Sidebar</a></li>
+                        <li><a href=page-blog-details.html>Blog Details</a></li>
+                        <li><a href=page-blog-list.html>Blog List</a></li>
+                        <li><a href=page-blog-single.html>Blog Single</a></li>
+                        <li><a href=page-blog-single2.html>Blog Single v2</a></li>
+                    </ul>
+                </li>
+                <li class="title my-3 bb1 pl20 fz20 fw500 pb-3">Departments</li>
+                <li><span><i class="flaticon-cooking mr20"></i>Home & Kitchen</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Home & Kitchen</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-armchair mr20"></i>Home & Furniture</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Home & Furniture</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-smartphone-1 mr20"></i>Electronics</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Electronics</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-bride-dress mr20"></i>Clothing & Accessories</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Clothing & Accessories</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-heart-beat mr20"></i>Health & Beauty</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Health & Beauty</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-volleyball mr20"></i>Sport & Outdoor</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Sport & Outdoor</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-groceries mr20"></i>Grocery & Market</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Grocery & Market</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-remote-control mr20"></i>Toy & Video Games</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Toy & Video Games</a></li>
+                    </ul>
+                </li>
+                <li><span><i class="flaticon-feeding-bottle mr20"></i>Babies & Moms</span>
+                    <ul>
+                        <li><a href=page-shop-list-v1.html>Babies & Moms</a></li>
+                    </ul>
+                </li>
+                <li><a class="tdu text-thm1 text-capitalize" href=#>See More <i class="far fa-angle-down"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="body_content_wrapper position-relative pt30">
 
-	<script src="{{asset('assets/front/js/toastr.js')}}"></script>
-	<!-- main -->
-	<script src="{{asset('assets/front/js/main.js')}}"></script>
-	<!-- custom -->
-	<script src="{{asset('assets/front/js/custom.js')}}"></script>
+        @yield('content')
 
-    {!! $seo->google_analytics !!}
-
-  @if($gs->is_talkto == 1)
-    <!--Start of Tawk.to Script-->
-      {!! $gs->talkto !!}
-    <!--End of Tawk.to Script-->
-  @endif
-
-	@yield('scripts')
-
+    </div>
+</div>
+<script src="{{ asset('js/jquery-3.6.0.js')}}"></script>
+<script src="{{ asset("js/jquery-migrate-3.0.0.min.js")}}"></script>
+<script src="{{ asset("js/popper.min.js")}}"></script>
+<script src="{{ asset("js/bootstrap.min.js")}}"></script>
+<script src="{{ asset("js/bootstrap-select.min.js")}}"></script>
+<script src="{{ asset("js/jquery.mmenu.all.js")}}"></script>
+<script src="{{ asset("js/ace-responsive-menu.js")}}"></script>
+<script src="{{ asset("js/jquery-scrolltofixed-min.js")}}"></script>
+<script src="{{ asset("js/wow.min.js")}}"></script>
+<script src="{{ asset("js/slider.js")}}"></script>
+<script src="{{ asset("js/scrollbalance.js")}}"></script>
+<script src="{{ asset("js/script.js")}}"></script>
 </body>
 
 </html>
