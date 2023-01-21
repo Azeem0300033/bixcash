@@ -123,7 +123,9 @@ class FrontendController extends Controller
         $data = $request->url();
         $ip = $request->ip();
         $locations = Location::get($ip);
-
+        $big_products = Product::where('big', '=', 1)->where('status', '=', 1)->orderBy('id', 'desc')->take(6)->get();
+        $new_arrivals = Product::where('status', '=', 1)->orderBy('id', 'desc')->take(8)->get();
+        $hot_products = Product::where('hot', '=', 1)->where('status', '=', 1)->orderBy('id', 'desc')->take(9)->get();
         // if($locations->countryName == "Pakistan")
         if ("Pakistan" == "Pakistan") {
 
@@ -149,7 +151,7 @@ class FrontendController extends Controller
                 $ps = DB::table('pagesettings')->find(1);
                 $feature_products = Product::where('featured', '=', 1)->where('status', '=', 1)->orderBy('id', 'desc')->take(8)->get();
                 $best_products = Product::where('best', '=', 1)->where('status', '=', 1)->orderBy('id', 'desc')->take(6)->get();
-                return view('front.index', compact('ps', 'sliders', 'top_small_banners', 'feature_products','best_products'));
+                return view('front.index', compact('ps', 'sliders', 'top_small_banners', 'feature_products','best_products','big_products','new_arrivals','hot_products'));
             }
 
 
