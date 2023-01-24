@@ -94,7 +94,7 @@
 			<div class="row ovh">
 				@foreach($categories->where('is_featured','=',1) as $category)
 				<div class="col-6 col-md-3 col-xl wow fadeInUp" data-wow-duration=.7s><a
-							href="{{ route('front.category',$cat->slug) }}">
+							href="{{ route('front.category',$category->slug) }}">
 						<div class=iconbox>
 							<div class=icon><img src="{{ asset('assets/images/categories/'.$category->image) }}" alt="Category Image"></div>
 							<div class=details>
