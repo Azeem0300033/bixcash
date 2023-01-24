@@ -1,63 +1,47 @@
 @extends('layouts.front')
 @section('content')
-<!-- Breadcrumb Area Start -->
-<div class="breadcrumb-area">
-   <div class="container">
-      <div class="row">
-         <div class="col-lg-12">
-            <ul class="pages">
-               <li>
-                  <a href="{{route('front.index')}}">{{ $langg->lang17 }}</a>
-               </li>
-               @if (!empty($cat))
-               <li>
-                  <a href="{{route('front.category', $cat->slug)}}">{{ $cat->name }}</a>
-               </li>
-               @endif
-               @if (!empty($subcat))
-               <li>
-                  <a href="{{route('front.category', [$cat->slug, $subcat->slug])}}">{{ $subcat->name }}</a>
-               </li>
-               @endif
-               @if (!empty($childcat))
-               <li>
-                  <a href="{{route('front.category', [$cat->slug, $subcat->slug, $childcat->slug])}}">{{ $childcat->name }}</a>
-               </li>
-               @endif
-               @if (empty($childcat) && empty($subcat) && empty($cat))
-               <li>
-                  <a href="{{route('front.category')}}">{{ $langg->lang36 }}</a>
-               </li>
-               @endif
-
-            </ul>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Breadcrumb Area End -->
-<!-- SubCategori Area Start -->
-<section class="sub-categori">
-   <div class="container">
-      <div class="row">
-         @include('includes.catalog')
-         <div class="col-lg-9 order-first order-lg-last ajax-loader-parent">
-            <div class="right-area" id="app">
-
-               @include('includes.filter')
-               <div class="categori-item-area">
-                 <div class="row" id="ajaxContent">
-                   @include('includes.product.filtered-products')
-                 </div>
-                 <div id="ajaxLoader" class="ajax-loader" style="background: url({{asset('assets/images/'.$gs->loader)}}) no-repeat scroll center center rgba(0,0,0,.6);"></div>
-               </div>
-
+    <!-- Custom Shop Category List Menu -->
+    <section class="p0 bb1 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="custom_shop_category_nav_list_menu">
+                        <ul class="mb0 d-flex">
+                            <li><a href="#">All Electronics</a></li>
+                            <li><a href="#">Smart TV</a></li>
+                            <li><a class="active" href="#">Laptops</a></li>
+                            <li><a href="#">Cell Phones</a></li>
+                            <li><a href="#">Camera & Photo</a></li>
+                            <li><a href="#">Portable Audio</a></li>
+                            <li><a href="#">Computers</a></li>
+                            <li><a href="#">iPad & Tablets</a></li>
+                            <li><a href="#">Pc Gaming</a></li>
+                            <li><a href="#">Smart Home</a></li>
+                            <li><a href="#">Headphones</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-</section>
-<!-- SubCategori Area End -->
+        </div>
+    </section>
+
+    <!-- Inner Page Breadcrumb -->
+    <section class="inner_page_breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="breadcrumb_content">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Electronics</a></li>
+                            <li class="breadcrumb-item"><a href="#">Computers</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="#">Desktop Computers</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 
