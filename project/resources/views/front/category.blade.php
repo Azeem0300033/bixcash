@@ -227,6 +227,19 @@
                                 </div>
                             </div>
                         @endforeach
+
+                        <div class="col-lg-12">
+                            <div class="page-center mt-5">
+                                {!! $prods->appends(['search' => request()->input('search')])->links() !!}
+                            </div>
+                        </div>
+
+                    @else
+                        <div class="col-lg-12">
+                            <div class="page-center">
+                                <h4 class="text-center">{{ $langg->lang60 }}</h4>
+                            </div>
+                        </div>
                     @endif
                 </div>
             </div>
