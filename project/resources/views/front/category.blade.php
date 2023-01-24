@@ -199,7 +199,7 @@
                                     </div>
                                     <div class="details">
                                         <div class="sub_title">SAMSUNG</div>
-                                        <div class="title"><a href="#">{{ $prod->showName() }}</a></div>
+                                        <div class="title"><a href="{{ route('front.product', $prod->slug) }}">{{ $prod->showName() }}</a></div>
                                         <div class="review d-flex">
                                             <ul class="mb0 me-2">
                                                 <li class="list-inline-item"><a href="#"><i class="fas fa-star"></i></a>
