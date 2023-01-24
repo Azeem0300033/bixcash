@@ -7,17 +7,27 @@
                 <div class="col-lg-12">
                     <div class="custom_shop_category_nav_list_menu">
                         <ul class="mb0 d-flex">
-                            <li><a href="#">All Electronics</a></li>
-                            <li><a href="#">Smart TV</a></li>
-                            <li><a class="active" href="#">Laptops</a></li>
-                            <li><a href="#">Cell Phones</a></li>
-                            <li><a href="#">Camera & Photo</a></li>
-                            <li><a href="#">Portable Audio</a></li>
-                            <li><a href="#">Computers</a></li>
-                            <li><a href="#">iPad & Tablets</a></li>
-                            <li><a href="#">Pc Gaming</a></li>
-                            <li><a href="#">Smart Home</a></li>
-                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">Home</a></li>
+                            @if (!empty($cat))
+                                <li>
+                                    <a href="{{route('front.category', $cat->slug)}}">{{ $cat->name }}</a>
+                                </li>
+                            @endif
+                            @if (!empty($subcat))
+                                <li>
+                                    <a href="{{route('front.category', [$cat->slug, $subcat->slug])}}">{{ $subcat->name }}</a>
+                                </li>
+                            @endif
+                            @if (!empty($childcat))
+                                <li>
+                                    <a href="{{route('front.category', [$cat->slug, $subcat->slug, $childcat->slug])}}">{{ $childcat->name }}</a>
+                                </li>
+                            @endif
+                            @if (empty($childcat) && empty($subcat) && empty($cat))
+                                <li>
+                                    <a href="{{route('front.category')}}">{{ $langg->lang36 }}</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
