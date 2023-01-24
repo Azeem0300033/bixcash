@@ -179,7 +179,7 @@
                             <div class="col-sm-6 col-lg-4 col-xl p0 pl15-520">
                                 <div class="shop_item bdr1 m--1">
                                     <div class="thumb pb30">
-                                        <img src="images/shop-items/shop-item1.png" alt="Shop Item1">
+                                        <img src="{{ $prod->photo ? asset('assets/images/thumbnails/'.$prod->thumbnail):asset('assets/images/noimage.png') }}" alt="Shop Item1">
                                         <div class="thumb_info">
                                             <ul class="mb0">
                                                 <li><a href="page-dashboard-wish-list.html"><span
@@ -199,8 +199,7 @@
                                     </div>
                                     <div class="details">
                                         <div class="sub_title">SAMSUNG</div>
-                                        <div class="title"><a href="#">Acer Aspire 5 15.6" Laptop - Silver (Intel Core
-                                                i7-1165G7/512GB SSD/12GB RAM/Windows 11)</a></div>
+                                        <div class="title"><a href="#">{{ $prod->showName() }}</a></div>
                                         <div class="review d-flex">
                                             <ul class="mb0 me-2">
                                                 <li class="list-inline-item"><a href="#"><i class="fas fa-star"></i></a>
@@ -217,9 +216,12 @@
                                             <div class="review_count"><a href="#">3,014 reviews</a></div>
                                         </div>
                                         <div class="si_footer">
-                                            <div class="price">$32.50 <small>
-                                                    <del>$45</del>
-                                                </small></div>
+                                            <div class="price">
+                                                {{ $prod->setCurrency() }}
+                                                <small>
+                                                    <del>{{ $prod->showPreviousPrice() }}</del>
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
