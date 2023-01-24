@@ -36,6 +36,7 @@
 									                        <th>{{ __('Header') }}</th>
 									                        <th>{{ __('Footer') }}</th>
 									                        <th>{{ __('Options') }}</th>
+
 														</tr>
 													</thead>
 												</table>

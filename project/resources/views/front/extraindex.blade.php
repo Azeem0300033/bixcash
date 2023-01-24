@@ -60,8 +60,7 @@
 											</div>
 											<div class=details>
 												<div class=sub_title>SAMSUNG</div>
-												<div class=title><a href=page-shop-single-v1.html>Great Value Ultra
-														Strong Paper Towels, Split Sheets, 6 Double </a></div>
+												<div class=title><a href=page-shop-single-v1.html>{{$product->name}} </a></div>
 												<div class="review d-flex db-500">
 													<ul class="mb0 me-2">
 														<li class=list-inline-item><a href=#><i
@@ -78,9 +77,7 @@
 													<div class=review_count><a href=#>3,014 reviews</a></div>
 												</div>
 												<div class=si_footer>
-													<div class=price>$32.50 <small>
-															<del>$45</del>
-														</small></div>
+													<div class=price>{{ $product->setCurrency()}} <del><small>{{ $product->showPreviousPrice() }}</small></del></div>
 												</div>
 											</div>
 										</div>
@@ -165,8 +162,7 @@
 											</div>
 											<div class=details>
 												<div class=sub_title>SAMSUNG</div>
-												<div class=title><a href=page-shop-single-v1.html>Samsung 65" 4K UHD
-														HDR QLED Tizen Smart TV</a></div>
+												<div class=title><a href=page-shop-single-v1.html>{{ $big_product->name }}</a></div>
 												<div class="review d-flex db-500">
 													<ul class="mb0 me-2">
 														<li class=list-inline-item><a href=#><i
@@ -183,9 +179,7 @@
 													<div class=review_count><a href=#>3,014 reviews</a></div>
 												</div>
 												<div class=si_footer>
-													<div class=price>$32.50<small>
-															<del>$45</del>
-														</small></div>
+													<div class=price>{{ $big_product->setCurrency()}} <del><small>{{ $big_product->showPreviousPrice() }}</small></del></div>
 												</div>
 											</div>
 										</div>
@@ -263,9 +257,7 @@
 													</div>
 													<div class=details>
 														<div class=sub_title>Apple</div>
-														<div class=title><a href=page-shop-single-v1.html>Apple
-																Watch SE (GPS) 40mm Space Grey Aluminum Case
-																with</a></div>
+														<div class=title><a href=page-shop-single-v1.html>{{ $hot_product->name }}</a></div>
 														<div class="review d-flex db-500">
 															<ul class="mb0 me-2">
 																<li class=list-inline-item><a href=#><i
@@ -283,10 +275,12 @@
 															</div>
 														</div>
 														<div class=si_footer>
-															<div class=price>$32.50<small>
-																	<del>$45</del>
-																</small></div>
+															<div class=price>
+																{{ $hot_product->setCurrency()}} <del><small>{{ $hot_product->showPreviousPrice() }}</small></del>
+															</div>
+
 														</div>
+
 													</div>
 												</div>
 											</div>
@@ -344,7 +338,9 @@
 		<div class=row>
 			<div class=col-md-6>
 				<div class="main-title mb0-sm">
-					<h2>Hot New Arrivals</h2>
+
+					<h2>{{$langg->lang31}}</h2>
+
 				</div>
 			</div>
 			<div class=col-md-6>
@@ -378,745 +374,23 @@
 						<div class="fade tab-pane active show" id=nav-hnat20 aria-labelledby=nav-hnat20-tab
 							 role=tabpanel>
 							<div class=row>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
+								@foreach($new_arrivals as $new_product)
+									<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
 									 data-wow-duration=0.3s>
 									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap1.png></div>
+
+										<div class=flex-shrink-0><img alt="Hot New Arrival Product" src="{{$new_product->photo ? asset('assets/images/thumbnails/'.$new_product->thumbnail):asset('assets/images/noimage.png')}} " ></div>
+
 										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
-													Black, Standard</a></div>
-											<div class="para text-thm1">$32.50</div>
+											<div class="mb-2 title"><a href=#>{{$new_product->name}}</a></div>
+											<div class="para text-thm1">{{ $new_product->setCurrency()}} <del><small>{{ $new_product->showPreviousPrice() }}</small></del></div>
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap2.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
-													f/2.8 GM II G Master</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap3.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap4.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap5.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap6.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
-													Case with S-Pen Bundle</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap7.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap8.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
-													Chair Mesh Computer</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap9.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
-													Bridge Round Sunglasses</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap10.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
-													Desk Mount Stand</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap11.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
-													and Repositionable</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap12.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
-													Soothing Aloe</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
+								@endforeach
 							</div>
 						</div>
-						<div class="fade tab-pane" id=nav-hnababy aria-labelledby=nav-hnababy-tab role=tabpanel>
-							<div class=row>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap1.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
-													Black, Standard</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap2.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
-													f/2.8 GM II G Master</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap3.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap4.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap5.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap6.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
-													Case with S-Pen Bundle</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap7.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap8.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
-													Chair Mesh Computer</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap9.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
-													Bridge Round Sunglasses</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap10.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
-													Desk Mount Stand</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap11.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
-													and Repositionable</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap12.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
-													Soothing Aloe</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="fade tab-pane" id=nav-hnafurniture aria-labelledby=nav-hnafurniture-tab
-							 role=tabpanel>
-							<div class=row>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap1.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
-													Black, Standard</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap2.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
-													f/2.8 GM II G Master</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap3.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap4.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap5.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap6.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
-													Case with S-Pen Bundle</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap7.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap8.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
-													Chair Mesh Computer</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap9.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
-													Bridge Round Sunglasses</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap10.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
-													Desk Mount Stand</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap11.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
-													and Repositionable</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap12.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
-													Soothing Aloe</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="fade tab-pane" id=nav-hnaent aria-labelledby=nav-hnaent-tab role=tabpanel>
-							<div class=row>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap1.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
-													Black, Standard</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap2.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
-													f/2.8 GM II G Master</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap3.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap4.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap5.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap6.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
-													Case with S-Pen Bundle</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap7.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap8.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
-													Chair Mesh Computer</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap9.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
-													Bridge Round Sunglasses</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap10.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
-													Desk Mount Stand</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap11.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
-													and Repositionable</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap12.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
-													Soothing Aloe</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="fade tab-pane" id=nav-hnaall aria-labelledby=nav-hnaall-tab role=tabpanel>
-							<div class=row>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap1.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony DJ Headphones 4334205465,
-													Black, Standard</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap2.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Sony E-Mount Full Frame FE 24-70mm
-													f/2.8 GM II G Master</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap3.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=0.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap4.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>TV 55" 4-Series 4K UHD smart
-													TV</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap5.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap6.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Samsung Galaxy S21 Ultra Silicone
-													Case with S-Pen Bundle</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap7.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Apple iPhone Retina 6s Plus
-													64GB</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.7s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap8.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Office Chair Ergonomic Cheap Desk
-													Chair Mesh Computer</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=1.9s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap9.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Ray-Ban Women's Rb3647n Double
-													Bridge Round Sunglasses</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.1s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap10.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Suptek Aluminum Alloy Cell Phone
-													Desk Mount Stand</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.3s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap11.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>PopSockets PopWallet+: Swappable
-													and Repositionable</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-3 col-lg-4 col-sm-6 px-1 px-sm-0 fadeInUp wow"
-									 data-wow-duration=2.5s>
-									<div class="align-items-center bdr1 d-flex shop_item tiny_style">
-										<div class=flex-shrink-0><img alt="Hot New Arrival Product"
-																	  src=images/shop-items/hnap12.png></div>
-										<div class="flex-grow-1 ms-3">
-											<div class="mb-2 title"><a href=#>Cooling Body Gel Moisturizer with
-													Soothing Aloe</a></div>
-											<div class="para text-thm1">$32.50</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-
+<h1>heloooo</h1>
 
 	<section class=home-one>
 		<div class=container>

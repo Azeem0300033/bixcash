@@ -1,6 +1,8 @@
+
 @extends('layouts.admin')
 
 @section('content')
+
 					<input type="hidden" id="headerdata" value="{{ __('CATEGORY') }}">
 					<input type="hidden" id="attribute_data" value="{{ __('ADD NEW ATTRIBUTE') }}">
 					<div class="content-area">
@@ -175,3 +177,4 @@
 </script>
 
 @endsection
+
