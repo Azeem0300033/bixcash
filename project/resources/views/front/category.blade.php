@@ -176,7 +176,7 @@
                 <div class="row">
                     @if (count($prods) > 0)
                         @foreach ($prods as $key => $prod)
-                            <div class="col-sm-6 col-lg-3 col-md-3">
+                            <div class="col-sm-6 col-lg-3 col-md-3 mb-2">
                                 <div class="shop_item bdr1 m--1">
                                     <div class="thumb pb30">
                                         <img src="{{ $prod->photo ? asset('assets/images/thumbnails/'.$prod->thumbnail):asset('assets/images/noimage.png') }}" alt="Shop Item1">
