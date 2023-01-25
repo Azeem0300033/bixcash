@@ -114,37 +114,26 @@
                             </li>
                             <li class="d-none d-md-inline-block me-0 mb-3">
                                 <div class="custom_dropdown_widget">
-                                    <div class="drop_btn3">Color <i class="fa fa-angle-down"></i></div>
-                                    <div class="drop_content3 pb20">
-                                        <div class="sidebar_widget_checkbox color_style mb15">
-                                            <div class="ui_kit_checkbox d-flex align-items-center mb0">
-                                                <label class="custom_checkbox me-2 mb15" checked="checked">
+                                    <div class="drop_btn2">Category <i class="fa fa-angle-down"></i></div>
+                                    <div class="drop_content2 pb20 text-start">
+                                        <div class="blog_search_widget mb15">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control mb15" placeholder="Search"
+                                                       aria-label="Recipient's username">
+                                            </div>
+                                        </div>
+                                        <div class="sidebar_widget_checkbox">
+                                            <div class="ui_kit_checkbox mb15">
+                                                @foreach ($categories as $element)
+                                                <label class="custom_checkbox">{{ $element->name }} <span class="float-end">{{ count($element) }}</span>
                                                     <input type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
-                                                <label class="custom_checkbox me-2 mb15">
-                                                    <input type="checkbox">
-                                                    <span class="checkmark style2"></span>
-                                                </label>
-                                                <label class="custom_checkbox me-2 mb15">
-                                                    <input type="checkbox">
-                                                    <span class="checkmark style3"></span>
-                                                </label>
-                                                <label class="custom_checkbox me-2 mb15">
-                                                    <input type="checkbox">
-                                                    <span class="checkmark style4"></span>
-                                                </label>
-                                                <label class="custom_checkbox me-2 mb15">
-                                                    <input type="checkbox">
-                                                    <span class="checkmark style5"></span>
-                                                </label>
-                                                <label class="custom_checkbox mb15">
-                                                    <input type="checkbox">
-                                                    <span class="checkmark style6"></span>
-                                                </label>
+                                                @endforeach
+{{--                                                <a href="#" class="shop_btn">Show More</a>--}}
                                             </div>
                                         </div>
-                                        <div class="enable_disable_btns d-grid mt50">
+                                        <div class="enable_disable_btns d-grid mt25">
                                             <a class="btn btn1 btn-thm mb10" href="#">View Result</a>
                                             <a class="btn btn2" href="#">Cancel</a>
                                         </div>
