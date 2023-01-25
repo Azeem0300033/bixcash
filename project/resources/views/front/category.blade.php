@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="main-title bb1 pb10">
-                        <h2 class="title">Laptops and Accessories</h2>
+                        <h2 class="title">{{$langg->lang61}}</h2>
                         <p>Shop laptops, desktops, monitors, tablets, PC gaming, hard drives and storage, accessories
                             and more</p>
                     </div>
