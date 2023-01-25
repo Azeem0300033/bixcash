@@ -125,7 +125,7 @@
                                         <div class="sidebar_widget_checkbox">
                                             <div class="ui_kit_checkbox mb15">
                                                 @foreach ($categories as $element)
-                                                <label class="custom_checkbox">{{ $element->name }} <span class="float-end">{{ $element->count() }}</span>
+                                                <label class="custom_checkbox">{{ $element->name }} <span class="float-end">{{ count($cat->subs) }}</span>
                                                     <input type="checkbox">
                                                     <span class="checkmark"></span>
                                                 </label>
