@@ -622,7 +622,7 @@
                             </ul>
                         </li>
                         <li><a href=page-brands.html>Brands</a></li>
-                        <li><a href=page-contact.html>Contact</a></li>
+                        <li><a href="bixcash.com/contact">Contact</a></li>
                         <li><a href=page-coming-soon.html>Coming Soon</a></li>
                         <li><a href=page-help.html>Help</a></li>
                         <li><a href=page-error.html>404 Page</a></li>
@@ -733,19 +733,19 @@
                                 <div class=icon><span class=flaticon-email></span></div>
                                 <div class="details ms-4">
                                     <h5 class=title>Need help with your order?</h5>
-                                    <a href=#>support@zeomart.com</a></div>
+                                    <a href=#>support@bixcash.com</a></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 col-lg-2 col-xl-2">
                         <div class=footer_qlink_widget>
-                            <h4>About Zenmart</h4>
+                            <h4>About bixcash</h4>
                             <ul class=list-unstyled>
-                                <li><a href=#>Track Your Order</a></li>
+                                <li><a href="https://bixcash.com/">Home</a></li>
                                 <li><a href=#>Product Guides</a></li>
                                 <li><a href=#>Wishlists</a></li>
-                                <li><a href=#>Privacy Policy</a></li>
-                                <li><a href=#>Store Locator</a></li>
+                                <li><a href="https://bixcash.com/privacy">Privacy Policy</a></li>
+                                <li><a href="https://bixcash.com/terms">Terms & Condition</a></li>
                             </ul>
                         </div>
                     </div>
@@ -753,23 +753,23 @@
                         <div class=footer_qlink_widget>
                             <h4>Customer Support</h4>
                             <ul class=list-unstyled>
-                                <li><a href=#>Contact Us</a></li>
+                                <li><a href="https://bixcash.com/about">About Us</a></li>
+                                <li><a href="https://bixcash.com/contact">Contact Us</a></li>
                                 <li><a href=#>Help Centre</a></li>
-                                <li><a href=#>Returns & Exchanges</a></li>
-                                <li><a href=#>Best Buy Financing</a></li>
-                                <li><a href=#>Best Buy Gift Card</a></li>
+                                <li><a href="https://bixcash.com/Return%20&%20Exchange%20Policy">Returns & Exchanges</a></li>
+                                <li><a href="https://bixcash.com/FAQs">FAQs</a></li>
+
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 col-lg-2 col-xl-2">
                         <div class=footer_qlink_widget>
-                            <h4>Services</h4>
+                            <h4>Categories</h4>
                             <ul class=list-unstyled>
-                                <li><a href=#>Geek Squad</a></li>
-                                <li><a href=#>In-Home Advisor</a></li>
-                                <li><a href=#>Trade-In Program</a></li>
-                                <li><a href=#>Electronics Recycling</a></li>
-                                <li><a href=#>Best Buy Health</a></li>
+                                @foreach($categories->take(5) as $category)
+                                    <li><a href="{{route('front.category',$category->slug)}}">{{ $category->name }}</a></li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
@@ -818,7 +818,7 @@
                 <div class=row>
                     <div class=col-lg-6>
                         <div class="copyright-widget text-center text-lg-start d-block d-lg-flex mb15-md">
-                            <p class=me-4>© 2022 Zeomart. All Rights Reserved</p>
+                            <p class=me-4>© {{date('Y')}} bixcash. All Rights Reserved</p>
                             <p><a href=#>Privacy</a>·<a href=#>Terms</a>·<a href=#>Sitemap</a></p>
                         </div>
                     </div>
