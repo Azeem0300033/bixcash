@@ -114,8 +114,8 @@
                             </li>
                             <li class="d-none d-md-inline-block me-0 mb-3">
                                 <div class="custom_dropdown_widget">
-                                    <div class="drop_btn2">Category <i class="fa fa-angle-down"></i></div>
-                                    <div class="drop_content2 pb20 text-start">
+                                    <div class="drop_btn3">Category <i class="fa fa-angle-down"></i></div>
+                                    <div class="drop_content3 pb20 text-start">
                                         <div class="blog_search_widget mb15">
                                             <div class="input-group">
                                                 <input type="text" class="form-control mb15" placeholder="Search"
