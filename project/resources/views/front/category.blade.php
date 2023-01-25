@@ -69,49 +69,49 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="d-none d-md-inline-block me-2 mb-3">
-                                <div class="custom_dropdown_widget">
-                                    <div class="drop_btn2">Brand <i class="fa fa-angle-down"></i></div>
-                                    <div class="drop_content2 pb20 text-start">
-                                        <div class="blog_search_widget mb15">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control mb15" placeholder="Search"
-                                                       aria-label="Recipient's username">
-                                            </div>
-                                        </div>
-                                        <div class="sidebar_widget_checkbox">
-                                            <div class="ui_kit_checkbox mb15">
-                                                <label class="custom_checkbox">Apple <span class="float-end">87</span>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="custom_checkbox" checked="checked">Asus <span
-                                                            class="float-end">92</span>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="custom_checkbox">Acer <span class="float-end">123</span>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="custom_checkbox">Dell <span class="float-end">49</span>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <label class="custom_checkbox">Lenovo <span class="float-end">12</span>
-                                                    <input type="checkbox">
-                                                    <span class="checkmark"></span>
-                                                </label>
-                                                <a href="#" class="shop_btn">Show More</a>
-                                            </div>
-                                        </div>
-                                        <div class="enable_disable_btns d-grid mt25">
-                                            <a class="btn btn1 btn-thm mb10" href="#">View Result</a>
-                                            <a class="btn btn2" href="#">Cancel</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+{{--                            <li class="d-none d-md-inline-block me-2 mb-3">--}}
+{{--                                <div class="custom_dropdown_widget">--}}
+{{--                                    <div class="drop_btn2">Brand <i class="fa fa-angle-down"></i></div>--}}
+{{--                                    <div class="drop_content2 pb20 text-start">--}}
+{{--                                        <div class="blog_search_widget mb15">--}}
+{{--                                            <div class="input-group">--}}
+{{--                                                <input type="text" class="form-control mb15" placeholder="Search"--}}
+{{--                                                       aria-label="Recipient's username">--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="sidebar_widget_checkbox">--}}
+{{--                                            <div class="ui_kit_checkbox mb15">--}}
+{{--                                                <label class="custom_checkbox">Apple <span class="float-end">87</span>--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="checkmark"></span>--}}
+{{--                                                </label>--}}
+{{--                                                <label class="custom_checkbox" checked="checked">Asus <span--}}
+{{--                                                            class="float-end">92</span>--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="checkmark"></span>--}}
+{{--                                                </label>--}}
+{{--                                                <label class="custom_checkbox">Acer <span class="float-end">123</span>--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="checkmark"></span>--}}
+{{--                                                </label>--}}
+{{--                                                <label class="custom_checkbox">Dell <span class="float-end">49</span>--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="checkmark"></span>--}}
+{{--                                                </label>--}}
+{{--                                                <label class="custom_checkbox">Lenovo <span class="float-end">12</span>--}}
+{{--                                                    <input type="checkbox">--}}
+{{--                                                    <span class="checkmark"></span>--}}
+{{--                                                </label>--}}
+{{--                                                <a href="#" class="shop_btn">Show More</a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="enable_disable_btns d-grid mt25">--}}
+{{--                                            <a class="btn btn1 btn-thm mb10" href="#">View Result</a>--}}
+{{--                                            <a class="btn btn2" href="#">Cancel</a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
                             <li class="d-none d-md-inline-block me-0 mb-3">
                                 <div class="custom_dropdown_widget">
                                     <div class="drop_btn3">Category <i class="fa fa-angle-down"></i></div>
