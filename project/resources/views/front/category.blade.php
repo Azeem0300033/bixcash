@@ -60,7 +60,7 @@
                                         <div class="zmart_custom_range_slider mt30">
                                             <input class="mb5" data-addui="slider" data-min="20" data-formatter="usd"
                                                    data-fontsize="14" data-step="0.02" data-range="true"
-                                                   data-timeout="70987" value="20.50,70987.00"/>
+                                                   data-timeout="70987" value="20.50,70987.00" name="min"  id="min_price"/>
                                         </div>
                                         <div class="enable_disable_btns d-grid">
                                             <a class="btn btn1 btn-thm mb10" href="#">View Result</a>
